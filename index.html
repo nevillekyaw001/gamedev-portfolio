@@ -10,7 +10,7 @@
   <!--
     - favicon
   -->
-  <link rel="shortcut icon" href="./assets/images/goat_studios.jpg" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/images/Goat-Logo-Chrismas.png" type="image/x-icon">
 
   <!--
     - custom css link
@@ -263,7 +263,7 @@
                 <h4 class="h4 service-item-title">Game Mechanics</h4>
 
                 <p class="service-item-text">
-                  The most modern and high-quality design is made at a professional level.
+                  The most modern and high-quality design is made at a professional level. 
                 </p>
               </div>
 
@@ -279,7 +279,7 @@
                 <h4 class="h4 service-item-title">Systems implementation</h4>
 
                 <p class="service-item-text">
-                  High-quality development of sites at the professional level.
+                  High-quality development of sites at the professional level. 
                 </p>
               </div>
 
@@ -295,7 +295,7 @@
                 <h4 class="h4 service-item-title">Mobile Games</h4>
 
                 <p class="service-item-text">
-                  Professional development of applications for iOS and Android.
+                  Professional development of applications for iOS and Android. 
                 </p>
               </div>
 
@@ -336,7 +336,7 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/mega_cat.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
                 </figure>
 
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>MEGA CAT STUDIOS</h4>
@@ -366,7 +366,7 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/Goat-Logo-Chrismas.png" alt="Jessica miller" width="60" data-testimonials-avatar>
                 </figure>
 
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>GOAT STUDIOS	</h4>
@@ -390,7 +390,7 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/mawdev.jpg" style="border-radius: 25%;" alt="Emily evans" width="60" data-testimonials-avatar>
                 </figure>
 
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>MAWDEV GDT</h4>
@@ -703,7 +703,7 @@
 
         <section class="projects">
 
-          <ul class="filter-list">
+          <!-- <ul class="filter-list">
 
             <li class="filter-item">
               <button class="active" data-filter-btn>All</button>
@@ -721,7 +721,7 @@
               <button data-filter-btn>Web development</button>
             </li>
 
-          </ul>
+          </ul> -->
 
           <div class="filter-select-box">
 
@@ -1105,7 +1105,7 @@
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="https://formsubmit.co/el/murito" class="form" method="post">
+          <form id="contact-form" action="https://formspree.io/f/xrbzzpod" class="form" method="post">
 
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
@@ -1129,6 +1129,15 @@
       </article>
 
     </div>
+    <script>
+      function submitForm(event) {
+          event.preventDefault(); // Prevent default form submission
+          const form = document.getElementById('contact-form');
+          // Additional logic (e.g., validation) can go here
+          form.submit(); // Manually submit the form
+      }
+  </script>
+  
 
   </main>
 
