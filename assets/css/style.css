@@ -167,7 +167,7 @@ input, textarea {
 
 html { font-family: var(--ff-poppins); }
 
-body { background: linear-gradient(to bottom right, purple, #55f9ff, #32ffbb) }
+body { background: linear-gradient(to bottom right, hsl(250.89deg 31.44% 8.99%), hsl(249, 66%, 26%),#32ffbb) }
 
 
 
