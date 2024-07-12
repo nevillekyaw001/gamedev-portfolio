@@ -860,7 +860,7 @@ main {
 
 .skills-title { margin-bottom: 20px; }
 
-.skills-list { padding: 20px; }
+.skills-list { padding: 15px; margin:7px; }
 
 
 .skills-item:not(:last-child) { margin-bottom: 15px; }
