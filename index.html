@@ -59,11 +59,11 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.jpg" alt="Richard hanrick" width="80">
+          <img src="./assets/images/my-avatar-human.png" alt="Richard hanrick" width="80">
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Richard hanrick">Nyan Neville Kyaw</h1>
+          <h1 class="name" title="Richard hanrick">Nyan Kyaw</h1>
 
           <p style="margin-bottom:10px" class="title">Game Developer</p> 
           <p class="title">Gameplay Programmer</p>
@@ -118,7 +118,7 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Resume</p>
+              <p class="contact-title">CV</p>
 
               <a target="_blank" style="color:cyan" href="https://docs.google.com/document/d/1ArfCqpVTY3_Ut7gFtc8nCNg62_C0PyHOPu7CErwG0XY/edit?usp=sharing">Download Here</a>
             </div>
@@ -193,15 +193,15 @@
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link active" data-nav-link>Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>About</button>
           </li>
 
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
           </li>
 
           <li class="navbar-item">
@@ -217,14 +217,278 @@
       </nav>
 
 
+<!--
+        - #PORTFOLIO
+      -->
 
+<article class="portfolio active" data-page="portfolio">
+
+  <header>
+    <h2 class="h2 article-title">Portfolio</h2>
+  </header>
+
+  <section class="projects">
+
+    <!-- <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web design</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Applications</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web development</button>
+            </li>
+
+          </ul> -->
+
+    <div style="display:none" class="filter-select-box">
+
+      <button class="filter-select" data-select>
+
+        <div class="select-value" data-selecct-value>Select category</div>
+
+        <div class="select-icon">
+          <ion-icon name="chevron-down"></ion-icon>
+        </div>
+
+      </button>
+
+      <ul class="select-list">
+
+        <li class="select-item">
+          <button data-select-item>All</button>
+        </li>
+
+        <li class="select-item">
+          <button data-select-item>Web design</button>
+        </li>
+
+        <li class="select-item">
+          <button data-select-item>Applications</button>
+        </li>
+
+        <li class="select-item">
+          <button data-select-item>Web development</button>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <ul class="project-list">
+
+      <!-- <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/Pj_1-01.png" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Fruity Rush</h3>
+
+                <p class="project-category">Genre: Puzzle, 3-In-A-Row, Casual</p>
+                <p style="margin-left:10px" class="blog-text">Swipe on the fruits of the same color to destroy them. Do additional tasks! This game includes 1000 levels of fruity adventure throughout the map with different regions. Overly cute fruit visual and great visual effects has implemented for such lovely game.</p>
+
+              </a>
+            </li> -->
+
+      <li class="blog-post-item project-item active">
+        <a href="https://store.steampowered.com/app/2638370/Five_Nights_at_Freddys_Into_the_Pit/" target="_blank">
+
+          <figure class="blog-banner-box project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/fnaf_image.jpg" alt="Fruity Rush" loading="lazy">
+          </figure>
+
+          <div class="blog-content">
+
+            <h3 class="h3 blog-item-title">Five Nights at Freddy's: Into the Pit</h3>
+            <div class="blog-meta">
+              <p class="blog-category">Genre: Adventure, Horror, Pixel Graphics</p>
+            </div>
+
+            <p class="blog-text">
+              Survive five nights of terror in this chilling adventure game. Travel between time periods to solve
+              puzzles, gather
+              clues, and outrun the threat relentlessly pursuing you. Move swiftly and stay hidden, and you may just
+              survive. But be
+              careful—it's not just your own life that’s on the line this time.
+            </p>
+
+          </div>
+
+        </a>
+      </li>
+
+      <li class="blog-post-item project-item active">
+        <a href="https://www.dapperdinos.com/" target="_blank">
+
+          <figure class="blog-banner-box project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/dapper_dinos_image.png" alt="Fruity Rush" loading="lazy">
+          </figure>
+
+          <div class="blog-content">
+
+            <h3 class="h3 blog-item-title">Dapper Dinos</h3>
+            <div class="blog-meta">
+              <p class="blog-category">Genre: Adventure, 3D Platformer, Action</p>
+            </div>
+
+            <p class="blog-text">
+              Embark on an epic adventure in a 3D action platformer like no other. Fight your way through 20 enemies and
+              4 bosses, all
+              while customizing your dino with our innovative haberdashery system - and with blockchain technology, your
+              progress is
+              secure and your rewards are yours to keep!
+            </p>
+
+          </div>
+
+        </a>
+      </li>
+
+      <li class="blog-post-item project-item active">
+        <a href="https://play.google.com/store/apps/details?id=com.GOATStudios.ThanlyinHtoutPoh&hl=en&gl=US&pli=1"
+          target="_blank">
+
+          <figure class="blog-banner-box project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/Pj_1-01.png" alt="Fruity Rush" loading="lazy">
+          </figure>
+
+          <div class="blog-content">
+
+            <h3 class="h3 blog-item-title">Fruity Rush</h3>
+            <div class="blog-meta">
+              <p class="blog-category">Genre: Puzzle, 3-In-A-Row, Casual</p>
+            </div>
+
+            <p class="blog-text">
+              Swipe on the fruits of the same color to destroy them. Do additional tasks! This game includes 1000 levels
+              of fruity adventure throughout the map with different regions. Overly cute fruit visual and great visual
+              effects has implemented for such lovely game.
+            </p>
+
+          </div>
+
+        </a>
+      </li>
+
+      <li class="blog-post-item project-item active">
+        <a target="_blank" href="https://www.youtube.com/embed/9_1C-YUGiSw">
+
+          <figure class="blog-banner-box project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <iframe class="" width="100%" height="100%" src="https://www.youtube.com/embed/9_1C-YUGiSw"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen=""></iframe>
+          </figure>
+
+          <div class="blog-content">
+
+            <h3 class="h3 blog-item-title">Seagull Legacy</h3>
+            <div class="blog-meta">
+              <p class="blog-category">Genre: Simulation, Endless runner, Casual</p>
+            </div>
+
+            <p class="blog-text">
+              Soar through the skies and collect fishes while navigating through various obstacles such as boats,
+              lighthouses, storm clouds and other hazards.
+            </p>
+
+          </div>
+
+        </a>
+      </li>
+      <li class="blog-post-item project-item active">
+        <a href="https://play.google.com/store/apps/details?id=com.G.O.A.TStudio.WheelToLive&hl=en&gl=US"
+          target="_blank">
+
+          <figure class="blog-banner-box project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/Pj_2-01.png" alt="Fruity Rush" loading="lazy">
+          </figure>
+
+          <div class="blog-content">
+
+            <h3 class="h3 blog-item-title">Wheel To Live</h3>
+            <div class="blog-meta">
+              <p class="blog-category">Genre: Rhythm, Casual</p>
+            </div>
+
+            <p class="blog-text">
+              Roll the ball on the wheel to survive against incoming blocks. Wheel on and live on to win the maximum
+              rank!
+            </p>
+
+          </div>
+
+        </a>
+      </li>
+
+      <li class="blog-post-item project-item active">
+        <a href="https://www.youtube.com/watch?v=FqPjxu27er8" target="_blank">
+
+          <figure class="blog-banner-box project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/Pj_3-01.png" alt="Fruity Rush" loading="lazy">
+          </figure>
+
+          <div class="blog-content">
+
+            <h3 class="h3 blog-item-title">Puci Run!</h3>
+            <div class="blog-meta">
+              <p class="blog-category">Genre: Endless Runner, Casual</p>
+            </div>
+
+            <p class="blog-text">
+              Pixel Art game inspired from Adventure Time - Candy Kingdom with Cutie characters. Endless Runner mechanic
+              with multiple enemies, powerups, maps and cat selections.
+            </p>
+
+          </div>
+
+        </a>
+      </li>
+
+    </ul>
+
+  </section>
+
+</article>
 
 
       <!--
         - #ABOUT
       -->
 
-      <article class="about  active" data-page="about">
+      <article class="about" data-page="about">
 
         <header>
           <h2 class="h2 article-title">About me</h2>
@@ -730,267 +994,6 @@
         
 
       </article>
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
- 
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <!-- <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-
-          </ul> -->
-
-          <div style="display:none" class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <!-- <li class="project-item active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/Pj_1-01.png" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Fruity Rush</h3>
-
-                <p class="project-category">Genre: Puzzle, 3-In-A-Row, Casual</p>
-                <p style="margin-left:10px" class="blog-text">Swipe on the fruits of the same color to destroy them. Do additional tasks! This game includes 1000 levels of fruity adventure throughout the map with different regions. Overly cute fruit visual and great visual effects has implemented for such lovely game.</p>
-
-              </a>
-            </li> -->
-
-            <li class="blog-post-item project-item active">
-              <a href="https://store.steampowered.com/app/2638370/Five_Nights_at_Freddys_Into_the_Pit/"
-                target="_blank">
-            
-                <figure class="blog-banner-box project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/fnaf_image.jpg" alt="Fruity Rush" loading="lazy">
-                </figure>
-            
-                <div class="blog-content">
-            
-                  <h3 class="h3 blog-item-title">Five Nights at Freddy's: Into the Pit</h3>
-                  <div class="blog-meta">
-                    <p class="blog-category">Genre: Adventure, Horror, Pixel Graphics</p>
-                  </div>
-            
-                  <p class="blog-text">
-                    Survive five nights of terror in this chilling adventure game. Travel between time periods to solve puzzles, gather
-                    clues, and outrun the threat relentlessly pursuing you. Move swiftly and stay hidden, and you may just survive. But be
-                    careful—it's not just your own life that’s on the line this time.
-                  </p>
-            
-                </div>
-            
-              </a>
-            </li>
-            
-            <li class="blog-post-item project-item active">
-              <a href="https://www.dapperdinos.com/"
-                target="_blank">
-            
-                <figure class="blog-banner-box project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/dapper_dinos_image.png" alt="Fruity Rush" loading="lazy">
-                </figure>
-            
-                <div class="blog-content">
-            
-                  <h3 class="h3 blog-item-title">Dapper Dinos</h3>
-                  <div class="blog-meta">
-                    <p class="blog-category">Genre: Adventure, 3D Platformer, Action</p>
-                  </div>
-            
-                  <p class="blog-text">
-                    Embark on an epic adventure in a 3D action platformer like no other. Fight your way through 20 enemies and 4 bosses, all
-                    while customizing your dino with our innovative haberdashery system - and with blockchain technology, your progress is
-                    secure and your rewards are yours to keep!
-                  </p>
-            
-                </div>
-            
-              </a>
-            </li>
-
-            <li class="blog-post-item project-item active">
-              <a href="https://play.google.com/store/apps/details?id=com.GOATStudios.ThanlyinHtoutPoh&hl=en&gl=US&pli=1" target="_blank">
-
-                <figure class="blog-banner-box project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/Pj_1-01.png" alt="Fruity Rush" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <h3 class="h3 blog-item-title">Fruity Rush</h3>
-                  <div class="blog-meta">
-                    <p class="blog-category">Genre: Puzzle, 3-In-A-Row, Casual</p>
-                  </div>
-
-                  <p class="blog-text">
-                    Swipe on the fruits of the same color to destroy them. Do additional tasks! This game includes 1000 levels of fruity adventure throughout the map with different regions. Overly cute fruit visual and great visual effects has implemented for such lovely game.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item project-item active">
-              <a target="_blank" href="https://www.youtube.com/embed/9_1C-YUGiSw">
-
-                <figure class="blog-banner-box project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <iframe class="" width="100%" height="100%" src="https://www.youtube.com/embed/9_1C-YUGiSw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-                </figure>
-
-                <div class="blog-content">
-
-                  <h3 class="h3 blog-item-title">Seagull Legacy</h3>
-                  <div class="blog-meta">
-                    <p class="blog-category">Genre: Simulation, Endless runner, Casual</p>
-                  </div>
-
-                  <p class="blog-text">
-                    Soar through the skies and collect fishes while navigating through various obstacles such as boats, lighthouses, storm clouds and other hazards.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-            <li class="blog-post-item project-item active">
-              <a href="https://play.google.com/store/apps/details?id=com.G.O.A.TStudio.WheelToLive&hl=en&gl=US" target="_blank">
-
-                <figure class="blog-banner-box project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/Pj_2-01.png" alt="Fruity Rush" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <h3 class="h3 blog-item-title">Wheel To Live</h3>
-                  <div class="blog-meta">
-                    <p class="blog-category">Genre: Rhythm, Casual</p>
-                  </div>
-
-                  <p class="blog-text">
-                    Roll the ball on the wheel to survive against incoming blocks. Wheel on and live on to win the maximum rank!
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item project-item active">
-              <a href="https://www.youtube.com/watch?v=FqPjxu27er8" target="_blank">
-
-                <figure class="blog-banner-box project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/Pj_3-01.png" alt="Fruity Rush" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <h3 class="h3 blog-item-title">Puci Run!</h3>
-                  <div class="blog-meta">
-                    <p class="blog-category">Genre: Endless Runner, Casual</p>
-                  </div>
-
-                  <p class="blog-text">
-                    Pixel Art game inspired from Adventure Time - Candy Kingdom with Cutie characters. Endless Runner mechanic with multiple enemies, powerups, maps and cat selections.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-            
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
 
 
       <!--
