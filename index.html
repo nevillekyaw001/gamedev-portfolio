@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neville - GameDev Portfolio</title>
+  <title>Nyan Kyaw (Neville) - Game Developer Portfolio</title>
 
   <!--
     - favicon
@@ -16,6 +16,7 @@
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/theme-3d.css">
 
   <!--
     - google font link
@@ -45,6 +46,11 @@
 <body>
 
   <!--
+    - 3D animated background (Three.js)
+  -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!--
     - #MAIN
   -->
 
@@ -59,11 +65,11 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar-human.png" alt="Richard hanrick" width="80">
+          <img src="./assets/images/my-avatar-human.png" alt="Nyan Kyaw" width="80">
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Richard hanrick">Nyan Kyaw</h1>
+          <h1 class="name" title="Nyan Kyaw">Nyan Kyaw</h1>
 
           <p style="margin-bottom:10px" class="title">Game Developer</p> 
           <p class="title">Gameplay Programmer</p>
@@ -92,7 +98,7 @@
             <div class="contact-info">
               <p class="contact-title">Email</p>
 
-              <a href="mailto:richard@example.com" class="contact-link">nyankyaw.gamedev@gmail.com</a>
+              <a href="mailto:nyankyaw.gamedev@gmail.com" class="contact-link">nyankyaw.gamedev@gmail.com</a>
             </div>
 
           </li>
@@ -106,7 +112,7 @@
             <div class="contact-info">
               <p class="contact-title">Phone</p>
 
-              <a href="tel:+12133522795" class="contact-link">+66930639070</a>
+              <a href="tel:+66930639070" class="contact-link">+66930639070</a>
             </div>
 
           </li>
@@ -206,6 +212,10 @@
 
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Projects</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Game</button>
           </li>
 
           <li class="navbar-item">
@@ -311,7 +321,7 @@
             <div class="project-item-icon-box">
               <ion-icon name="eye-outline"></ion-icon>
             </div>
-            <img src="./assets/images/fnaf_image.jpg" alt="Fruity Rush" loading="lazy">
+            <img src="./assets/images/fnaf_image.jpg" alt="Five Nights at Freddy's: Into the Pit" loading="lazy">
           </figure>
 
           <div class="blog-content">
@@ -341,7 +351,7 @@
             <div class="project-item-icon-box">
               <ion-icon name="eye-outline"></ion-icon>
             </div>
-            <img src="./assets/images/dapper_dinos_image.png" alt="Fruity Rush" loading="lazy">
+            <img src="./assets/images/dapper_dinos_image.png" alt="Dapper Dinos" loading="lazy">
           </figure>
 
           <div class="blog-content">
@@ -372,7 +382,7 @@
             <div class="project-item-icon-box">
               <ion-icon name="eye-outline"></ion-icon>
             </div>
-            <img src="./assets/images/fruitsplash.jpg" alt="Fruity Rush" loading="lazy">
+            <img src="./assets/images/fruitsplash.jpg" alt="Fruit Splash" loading="lazy">
           </figure>
 
           <div class="blog-content">
@@ -428,7 +438,7 @@
             <div class="project-item-icon-box">
               <ion-icon name="eye-outline"></ion-icon>
             </div>
-            <img src="./assets/images/Pj_2-01.png" alt="Fruity Rush" loading="lazy">
+            <img src="./assets/images/Pj_2-01.png" alt="Wheel To Live" loading="lazy">
           </figure>
 
           <div class="blog-content">
@@ -455,7 +465,7 @@
             <div class="project-item-icon-box">
               <ion-icon name="eye-outline"></ion-icon>
             </div>
-            <img src="./assets/images/Pj_3-01.png" alt="Fruity Rush" loading="lazy">
+            <img src="./assets/images/Pj_3-01.png" alt="Puci Run!" loading="lazy">
           </figure>
 
           <div class="blog-content">
@@ -495,7 +505,7 @@
         <section class="about-text">
           <p>
             Welcome to my portfolio! I’m <strong>Nyan Kyaw</strong>, an <strong>enthusiastic</strong> and <strong>skilled</strong>
-            game developer with <strong>3 years of experience</strong>. I’ve led
+            game developer with <strong>over 4 years of experience</strong>. I’ve led
             system implementations for hit titles like <strong>‘Five Nights at Freddy’s’</strong> and <strong>‘Dapper
               Dinos,’</strong> as well as contributed to
             <strong>profitable mobile games</strong>.
@@ -514,7 +524,7 @@
 
         <section class="service">
 
-          <h3 class="h3 service-title">What i'm doing</h3>
+          <h3 class="h3 service-title">What I'm doing</h3>
 
           <ul class="service-list">
 
@@ -602,7 +612,7 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/mega_cat.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/mega_cat.png" alt="Mega Cat Studios" width="60" data-testimonials-avatar>
                 </figure>
 
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>MEGA CAT STUDIOS</h4>
@@ -611,8 +621,8 @@
                   <h5 class="h4 testimonials-item-title" data-testimonials-title style="font-size:16px; color:white; margin-left:0">Game Developer</h5>
                   <time datetime="">Apr 2023 – Jun 2024</time>
                   <p>
-                    At Mega Cat Studios, I <b>collaborated closely with cross-functional teams, including developers, artists, producers and other talented colleagues</b>. This dynamic environment allowed me to discover their exceptional work and contribute to hit-title games such as the
-                    upcoming <b>‘Five Nights at Freddy’s: Into The Pit’</b> and <b>‘Dapper Dinos.’</b> My responsibilities spanned <b>system implementation, game mechanics, and bug fixes</b>, all managed under <b>various project managements</b>.
+                    At Mega Cat Studios, I <b>collaborated closely with cross-functional teams, including developers, artists, producers and other talented colleagues</b>. This dynamic environment allowed me to discover their exceptional work and contribute to hit-title games such as
+                    <b>‘Five Nights at Freddy’s: Into The Pit’</b> and <b>‘Dapper Dinos.’</b> My responsibilities spanned <b>system implementation, game mechanics, and bug fixes</b>, all managed under <b>various project managements</b>.
                   </p>
                 </div>
 
@@ -623,7 +633,7 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/Goat-Logo-Chrismas.png" alt="Jessica miller" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/Goat-Logo-Chrismas.png" alt="GOAT Studios" width="60" data-testimonials-avatar>
                 </figure>
 
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>GOAT STUDIOS	</h4>
@@ -646,7 +656,7 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/mawdev.jpg" style="border-radius: 25%;" alt="Emily evans" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/mawdev.jpg" style="border-radius: 25%;" alt="MawDev GDT" width="60" data-testimonials-avatar>
                 </figure>
 
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>MAWDEV GDT</h4>
@@ -684,7 +694,7 @@
 
             <div class="modal-img-wrapper">
               <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" style="border-radius: 25%;" alt="Daniel lewis" width="80" data-modal-img>
+                <img src="./assets/images/mega_cat.png" style="border-radius: 25%;" alt="Organization logo" width="80" data-modal-img>
               </figure>
 
               <img src="./assets/images/icon-quote.svg" style="border-radius: 25%;" alt="quote icon">
@@ -697,13 +707,7 @@
       
    
               <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
+                <p></p>
               </div>
 
             </div>
@@ -832,7 +836,7 @@
               </li>
               <li class="skills-item">
                 <div class="title-wrapper">
-                  <h5 class="h5">Ad Managemnent Plugins</h5>
+                  <h5 class="h5">Ad Management Plugins</h5>
                 </div>
               </li>
               <li class="skills-item">
@@ -904,7 +908,7 @@
 
             <li class="timeline-item">
               <h3 class="h3 timeline-item-title">MAWDEV GDT</h3>
-              <h4 class="h4 timeline-item-title">Game Development Lecturerr</h4>
+              <h4 class="h4 timeline-item-title">Game Development Lecturer</h4>
 
               <span>Feb 2022 – Jan 2023</span>
 
@@ -1188,6 +1192,58 @@
 
 
       <!--
+        - #MINI GAME
+      -->
+
+      <article class="minigame" data-page="game">
+
+        <header>
+          <h2 class="h2 article-title">Mini Game</h2>
+        </header>
+
+        <section class="game-section">
+
+          <p class="game-intro">
+            <strong>Hyperdrive Dodge</strong> — a tiny 3D game I built with <b>Three.js</b>, running right inside this
+            portfolio. Steer the ship, dodge the incoming blocks, and chase the high score. The longer you survive,
+            the faster it gets!
+          </p>
+
+          <div class="game-frame" data-game-frame>
+
+            <canvas id="game-canvas"></canvas>
+
+            <div class="game-hud">
+              <span>Score: <strong data-game-score>0</strong></span>
+              <span>Best: <strong data-game-best>0</strong></span>
+            </div>
+
+            <div class="game-overlay active" data-game-overlay>
+              <h3 class="h3" data-game-overlay-title>Hyperdrive Dodge</h3>
+              <p data-game-overlay-text>
+                Dodge the blocks for as long as you can. Steer with the arrow keys or A / D — on mobile, just drag
+                left and right.
+              </p>
+              <button class="game-btn" data-game-start>
+                <ion-icon name="game-controller-outline"></ion-icon>
+                <span>Play</span>
+              </button>
+            </div>
+
+          </div>
+
+          <p class="game-controls-hint">
+            Controls: ← → or A / D to steer &nbsp;•&nbsp; Drag on touch screens &nbsp;•&nbsp; Space / Enter to restart
+          </p>
+
+        </section>
+
+      </article>
+
+
+
+
+      <!--
         - #CONTACT
       -->
 
@@ -1249,9 +1305,17 @@
 
 
   <!--
+    - three.js library (3D background + mini game)
+  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!--
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/three-bg.js"></script>
+  <script src="./assets/js/interactive.js"></script>
+  <script src="./assets/js/minigame.js"></script>
 
   <!--
     - ionicon link

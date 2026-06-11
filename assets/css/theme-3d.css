@@ -1,0 +1,136 @@
+/*-----------------------------------*\
+  #3D THEME
+\*-----------------------------------*/
+
+/* fixed Three.js canvas behind all content */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body { background-attachment: fixed; }
+
+/* glass panels so the 3D scene shows through */
+.sidebar,
+article {
+  background: hsla(251, 31%, 9%, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid hsla(166, 100%, 60%, 0.12);
+}
+
+.navbar {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* interactive 3D tilt cards (transform driven by interactive.js) */
+.tilt-card {
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.tilt-card:hover {
+  box-shadow: 0 18px 40px hsla(166, 100%, 60%, 0.1);
+}
+
+
+
+
+/*-----------------------------------*\
+  #MINI GAME
+\*-----------------------------------*/
+
+.game-intro {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.game-frame {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid hsla(166, 100%, 60%, 0.25);
+  box-shadow: var(--shadow-2);
+  background: hsl(250.89deg 31.44% 8.99%);
+}
+
+#game-canvas {
+  display: block;
+  width: 100%;
+  touch-action: none;
+  outline: none;
+}
+
+.game-hud {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  justify-content: space-between;
+  color: var(--white-2);
+  font-size: var(--fs-6);
+  text-shadow: 0 2px 6px hsl(0, 0%, 0%);
+  pointer-events: none;
+}
+
+.game-hud strong { color: var(--orange-yellow-crayola); }
+
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+  padding: 20px;
+  background: hsla(251, 31%, 9%, 0.72);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.game-overlay.active { display: flex; }
+
+.game-overlay h3 { color: var(--white-2); }
+
+.game-overlay p {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  max-width: 440px;
+  line-height: 1.6;
+}
+
+.game-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  padding: 13px 26px;
+  border-radius: 14px;
+  font-size: var(--fs-6);
+  text-transform: capitalize;
+  box-shadow: var(--shadow-3);
+  cursor: pointer;
+  transition: var(--transition-1);
+}
+
+.game-btn:hover { background: var(--bg-gradient-yellow-1); color: var(--smoky-black); }
+
+.game-controls-hint {
+  color: var(--light-gray-70);
+  font-size: var(--fs-7);
+  margin-top: 15px;
+  text-align: center;
+}
