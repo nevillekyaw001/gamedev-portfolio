@@ -1,9 +1,10 @@
 /*
- * Quiet Systems II — the seeded field, now in three dimensions.
- * Philosophy: assets/art/QUIET-SYSTEMS.md
+ * Sophisticated Systems - the seeded field, third movement.
+ * Philosophy: assets/art/SOPHISTICATED-SYSTEMS.md (lineage: QUIET-SYSTEMS.md)
  * Hand-rolled perspective projection (no dependency): particles drift
- * through a 3D noise field; the camera leans gently toward the cursor
- * and sinks as you scroll. Calm is still the constraint.
+ * through a 3D noise field; the camera leans gently toward the cursor.
+ * Where currents converge, threads warm into Myanmar gold, jade and
+ * lacquer, and fireflies surface. Calm is still the constraint.
  */
 (function () {
   'use strict';
@@ -20,12 +21,13 @@
     timeScale: 0.00005,
     parallax: 38,          // max camera lean toward cursor (px)
     scrollDrift: 0.12,     // camera z-response to scroll
-    convergence: 0.74
+    convergence: 0.70,     // accents surface a little more often now
+    firefly: 0.855         // above this, a convergence glows
   };
 
-  var BG = [17, 17, 16];
-  var INK = [64, 63, 60];
-  var ACCENTS = [[196, 189, 173], [107, 109, 77], [88, 102, 134]];
+  var BG = [19, 18, 16];
+  var INK = [70, 67, 60];
+  var ACCENTS = [[227, 179, 76], [108, 198, 161], [212, 96, 79]];  // gold, jade, lacquer
 
   var canvas = document.getElementById('field-canvas');
   if (!canvas) return;
@@ -130,6 +132,14 @@
         ctx.moveTo(p.px, p.py);
         ctx.lineTo(q.x, q.y);
         ctx.stroke();
+        if (n > PARAMS.firefly) {
+          // a firefly: brief soft glow where the field is tightest
+          ctx.fillStyle = 'rgba(' + col[0] + ',' + col[1] + ',' + col[2] + ',' +
+            (0.10 + near * 0.18).toFixed(3) + ')';
+          ctx.beginPath();
+          ctx.arc(q.x, q.y, 1.1 + q.s * 1.6, 0, 6.2832);
+          ctx.fill();
+        }
       }
       p.px = q.x; p.py = q.y;
 

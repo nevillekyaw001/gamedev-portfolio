@@ -18,7 +18,9 @@
   var thinking = false;
 
   var VAL = { P: 100, F: 220, S: 260, N: 380, R: 550, K: 20000 };
-  var GLYPH = { K: '♚', F: '♛', S: '♝', N: '♞', R: '♜', P: '♟' };
+  // Burmese initials, as on traditional diagram sets:
+  // မ Min-gyi, စ Sit-ke, ဆ Sin, မြ Myin, ရ Yahhta, န Nè
+  var GLYPH = { K: 'မ', F: 'စ', S: 'ဆ', N: 'မြ', R: 'ရ', P: 'န' };
   var NAME = {
     K: 'Min-gyi (King)', F: 'Sit-ke (General)', S: 'Sin (Elephant)',
     N: 'Myin (Horse)', R: 'Yahhta (Chariot)', P: 'Nè (Feudal lord)'
@@ -202,8 +204,8 @@
   // ----------------------------------------------------------- personality
   var LINES = {
     intro: [
-      "Sittuyin — the chess my grandparents' generation played in tea shops. You're Red, you move first. Show me something.",
-      "Welcome to my board. Burmese rules, no castling, no shortcuts. Red moves first — that's you."
+      "Sittuyin - the chess my grandparents' generation played in tea shops. You're Red, you move first. Show me something.",
+      "Welcome to my board. Burmese rules, no castling, no shortcuts. Red moves first - that's you."
     ],
     playerGoodCapture: [
       "Okay, that was clean. I teach this for a living and I'd still mark that correct.",
@@ -224,42 +226,42 @@
       "I'm going to be polite and call that 'experimental'."
     ],
     aiCapture: [
-      "Mine now. Structure beats chaos — I keep telling people.",
+      "Mine now. Structure beats chaos - I keep telling people.",
       "Thank you for the donation. It funds the academy.",
       "I'll look after this piece better than you did.",
       "Every system has a weak point. That was yours."
     ],
     aiCheck: [
       "Check. Your king should start networking for a new job.",
-      "Check. No castling in Sittuyin — your king has to face this like an adult.",
+      "Check. No castling in Sittuyin - your king has to face this like an adult.",
       "Check. Breathe. There's usually a way out. Usually."
     ],
     playerCheck: [
       "Check?! Okay, okay. I respect the aggression.",
-      "Careful — I get focused when I'm cornered.",
+      "Careful - I get focused when I'm cornered.",
       "A check on my own board. The audacity. I love it."
     ],
     thinking: [
-      "Hmm…", "Let me think…", "Interesting…", "One second…"
+      "Hmm...", "Let me think...", "Interesting...", "One second..."
     ],
     aiWin: [
-      "Checkmate. Good game — seriously. Now imagine what you'd build after a few classes at GMM.",
+      "Checkmate. Good game - seriously. Now imagine what you'd build after a few classes at GMM.",
       "Checkmate. You lasted longer than most of my Discord. Rematch?"
     ],
     playerWin: [
-      "Checkmate… to me. On my own portfolio. I'm impressed and slightly hurt — email me, we should work together.",
+      "Checkmate... to me. On my own portfolio. I'm impressed and slightly hurt - email me, we should work together.",
       "You beat me. I'm putting this loss in my retrospective. Well played."
     ],
     draw: [
-      "Stalemate — in real Sittuyin you're not even allowed to do that to me, so let's call it a draw and remain friends."
+      "Stalemate - in real Sittuyin you're not even allowed to do that to me, so let's call it a draw and remain friends."
     ],
     promote: [
-      "My pawn just got promoted to general. Hard work pays off — I built two companies on that principle.",
-      "Promotion on the X-line. In Burmese we'd say the feudal lord earned his stripes."
+      "My pawn just got promoted to general. Hard work pays off - I built two companies on that principle.",
+      "Promotion on the gold line. In Burmese we'd say the feudal lord earned his stripes."
     ],
     playerPromote: [
       "You found the promotion rule. Now you're playing real Sittuyin.",
-      "Promoted. See, the diagonal lines aren't just decoration."
+      "Promoted. See, the gold diagonals aren't just decoration."
     ]
   };
 
@@ -316,7 +318,9 @@
   function pieceNode(pc, i) {
     var el = document.createElement('div');
     el.className = 'piece ' + (isRed(pc) ? 'piece-red' : 'piece-black');
-    el.textContent = GLYPH[pc.toUpperCase()];
+    var ic = document.createElement('i');
+    ic.textContent = GLYPH[pc.toUpperCase()];
+    el.appendChild(ic);
     el.title = NAME[pc.toUpperCase()];
     positionPiece(el, i);
     boardEl.appendChild(el);
@@ -377,7 +381,8 @@
       moving.dataset.sq = m.to;
       if (m.promoted) {
         setTimeout(function () {
-          moving.textContent = GLYPH.F;
+          var ic = moving.querySelector('i');
+          if (ic) ic.textContent = GLYPH.F;
           moving.classList.add('promoted');
         }, 220);
       }
@@ -394,8 +399,8 @@
     gameOver = true;
     thinking = false;
     boardEl.classList.add('done');
-    if (result === 'aiWin') { say('aiWin', true); setStatus('Checkmate — Nyan wins.'); }
-    else if (result === 'playerWin') { say('playerWin', true); setStatus('Checkmate — you win!'); }
+    if (result === 'aiWin') { say('aiWin', true); setStatus('Checkmate - Nyan wins.'); }
+    else if (result === 'playerWin') { say('playerWin', true); setStatus('Checkmate - you win!'); }
     else { say('draw', true); setStatus('Draw.'); }
   }
 
@@ -479,20 +484,20 @@
   // -------------------------------------------------------------- tutorial
   var TUTORIAL = [
     {
-      title: 'Sittuyin — Burmese chess',
-      body: "This is the chess of Myanmar, played for centuries in tea shops and temple courtyards. You play Red, and Red moves first. Win by checkmating my king — no castling, no shortcuts."
+      title: 'Sittuyin - Burmese chess',
+      body: "This is the chess of Myanmar, played for centuries in tea shops and temple courtyards. The pieces are lacquer discs - yours red, mine black - marked with Burmese letters, the way traditional diagram sets draw them. You play Red, and Red moves first. Win by checkmating my king. No castling, no shortcuts."
     },
     {
       title: 'The pieces',
-      body: "♚ King — one step, any direction. ♛ General — one step, diagonal only. ♝ Elephant — one step diagonal, or one straight forward. ♞ Horse — exactly like a chess knight. ♜ Chariot — exactly like a rook. ♟ Feudal lord (pawn) — one step forward, captures diagonally. No double first step."
+      body: "မ Min-gyi, the king - one step, any direction. စ Sit-ke, the general - one step, diagonal only. ဆ Sin, the elephant - one step diagonal, or one straight forward. မြ Myin, the horse - exactly like a chess knight. ရ Yahhta, the chariot - exactly like a rook. န Nè, the feudal lord - one step forward, captures diagonally, no double first step. Hover any disc and I'll remind you who it is."
     },
     {
-      title: 'The X lines',
-      body: "See the diagonals marked across the board? Those are the sit-ke-myin, the general's lines. If your general is gone, a pawn that stands on an X square in my half is promoted to a new general. (Real Sittuyin also lets you deploy your pieces freely before the game — here I've set up a classic formation for both of us so we can get straight to playing.)"
+      title: 'The gold lines',
+      body: "See the gold diagonals crossing the board? Those are the sit-ke-myin, the general's lines. If your general is gone, a pawn standing on a gold square in my half is promoted to a new general. One more honest note: real Sittuyin lets you deploy your pieces freely before the game begins - here I've set up a classic formation for both of us, so we can get straight to playing."
     },
     {
-      title: "One more thing",
-      body: "I'll be commenting on your moves. I'm told I can be… encouraging. Tap a Red piece to see where it can go. Good luck — you'll need a little."
+      title: 'One more thing',
+      body: "I'll be commenting on your moves. I'm told I can be... encouraging. Tap a red disc to see where it can go. Good luck - you'll need a little."
     }
   ];
   var tutStep = 0;
