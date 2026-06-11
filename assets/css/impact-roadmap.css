@@ -1,0 +1,179 @@
+/*-----------------------------------*\
+  #IMPACT ROADMAP
+  Personal canvas: site dark + cyan.
+  Venture accents: GMM Pastel Orange #FF964F / Pastel Red #FF6666
+  (fixed hex per GMM Brand Guidelines v1.0, 04 Color System).
+\*-----------------------------------*/
+
+.impact { margin-top: 35px; }
+
+.impact-intro {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* stat strip */
+
+.impact-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.impact-stat {
+  background: var(--border-gradient-onyx);
+  border-radius: 14px;
+  padding: 1px;
+  box-shadow: var(--shadow-2);
+}
+
+.impact-stat-inner {
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  padding: 16px 10px;
+  text-align: center;
+}
+
+.impact-stat-number {
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-2);
+  font-weight: var(--fw-600);
+}
+
+.impact-stat-label {
+  color: var(--white-2);
+  font-size: var(--fs-8);
+  margin-top: 4px;
+}
+
+/* roadmap timeline */
+
+.impact-roadmap-list {
+  font-size: var(--fs-6);
+  margin-left: 45px;
+  margin-bottom: 30px;
+}
+
+.impact-step { position: relative; }
+
+.impact-step:not(:last-child) { margin-bottom: 25px; }
+
+.impact-step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: -30px;
+  width: 1px;
+  height: calc(100% + 50px);
+  background: var(--jet);
+}
+
+.impact-step::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -33px;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: var(--accent, var(--orange-yellow-crayola));
+  box-shadow: 0 0 0 4px hsla(0, 0%, 100%, 0.08);
+}
+
+.impact-step[data-accent="gmm"] { --accent: #FF964F; }
+.impact-step[data-accent="gmm-red"] { --accent: #FF6666; }
+
+.impact-step-phase {
+  display: inline-block;
+  font-size: var(--fs-8);
+  font-weight: var(--fw-600);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent, var(--orange-yellow-crayola));
+  margin-bottom: 6px;
+}
+
+.impact-step-title {
+  color: var(--white-2);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
+  line-height: 1.3;
+  margin-bottom: 7px;
+}
+
+.impact-step-text {
+  color: var(--light-gray);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
+
+/* venture cards */
+
+.impact-ventures {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.impact-venture {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  border-radius: 14px;
+  padding: 1px;
+  box-shadow: var(--shadow-2);
+}
+
+.impact-venture-inner {
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  padding: 20px;
+  height: 100%;
+  border-top: 3px solid var(--accent, var(--orange-yellow-crayola));
+}
+
+.impact-venture[data-accent="gmm"] { --accent: #FF964F; }
+
+.impact-venture-role {
+  font-size: var(--fs-8);
+  font-weight: var(--fw-600);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent, var(--orange-yellow-crayola));
+  margin-bottom: 6px;
+}
+
+.impact-venture-name {
+  color: var(--white-2);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-600);
+  margin-bottom: 8px;
+}
+
+.impact-venture-text {
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
+
+.impact-venture-tagline {
+  display: block;
+  margin-top: 10px;
+  font-size: var(--fs-8);
+  font-style: italic;
+  color: var(--white-2);
+}
+
+@media (min-width: 580px) {
+  .impact-roadmap-list { margin-left: 65px; }
+  .impact-step:not(:last-child)::before { left: -40px; }
+  .impact-step::after { left: -43px; }
+}
+
+@media (min-width: 768px) {
+  .impact-ventures { grid-template-columns: 1fr 1fr; }
+}
