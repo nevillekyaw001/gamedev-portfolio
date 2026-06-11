@@ -38,6 +38,9 @@ the final frame is only evidence.
 
 ---
 
-**Expression:** `assets/js/quiet-field.js` — seeded flow field rendered as the portfolio's
-background layer. Parameters at the top of the file (seed, particle count, drift speed, trail
-decay, palette weights). Honors `prefers-reduced-motion` by rendering a single settled frame.
+**Expression:** `assets/js/quiet-field-3d.js` (Quiet Systems II) — the seeded field extended
+into a third dimension: particles drift through a 3D noise volume under hand-rolled perspective
+projection, the camera leans gently toward the cursor and sinks with scroll. Same seed, same
+restraint, one more axis. The original 2D expression is preserved in `assets/js/quiet-field.js`.
+Parameters at the top of each file. Honors `prefers-reduced-motion` by rendering a single
+settled frame.

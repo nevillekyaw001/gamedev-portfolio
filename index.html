@@ -30,7 +30,9 @@
       <div class="nav-links">
         <a href="#vision">Vision</a>
         <a href="#ventures">Ventures</a>
+        <a href="#roadmap">Roadmap</a>
         <a href="#work">Work</a>
+        <a href="#play">Play me</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -70,7 +72,7 @@
     <section id="ventures">
       <h2 class="section-label">Ventures</h2>
 
-      <div class="venture" data-tone="olive">
+      <div class="venture reveal" data-tone="olive" data-tilt>
         <div class="venture-head">
           <h3>Game Makers Myanmar</h3>
           <span class="role">Founder &amp; CEO · Lead Instructor</span>
@@ -78,14 +80,14 @@
         <p>
           Yangon-based game education, community and publishing company. A Burmese-language
           curriculum that has trained 100+ developers, national jams and showcases that give
-          Myanmar makers a stage, and a publishing bridge connecting international titles to a
-          mobile-first market of millions — building toward becoming the country's home-grown
-          game publisher.
+          Myanmar makers a stage — and a publishing arm that has already shipped five titles
+          across Google Play, Steam and itch.io, building toward becoming the country's
+          home-grown game publisher.
         </p>
-        <p class="tagline">Education · Community · Publishing</p>
+        <p class="tagline">Learn to build, Inspire to play.</p>
       </div>
 
-      <div class="venture" data-tone="navy">
+      <div class="venture reveal" data-tone="navy" data-tilt>
         <div class="venture-head">
           <h3>NagaPlus Interactive</h3>
           <span class="role">Founder &amp; CEO</span>
@@ -99,18 +101,73 @@
       </div>
     </section>
 
+    <section id="roadmap">
+      <h2 class="section-label">Roadmap</h2>
+      <p class="note" style="margin-bottom:8px">
+        One personal mission, carried by two companies. Each phase funds and de-risks the next.
+      </p>
+      <ol class="roadmap">
+        <li class="reveal" data-tone="olive">
+          <span class="phase">Educate — now</span>
+          <h3>Train the talent the industry doesn't have yet</h3>
+          <p>
+            Burmese-language game development education through GMM's academy — 100+ developers
+            trained, with free publishing for students who finish what they start.
+          </p>
+        </li>
+        <li class="reveal" data-tone="olive">
+          <span class="phase">Publish — now</span>
+          <h3>Put Myanmar-made games on world storefronts</h3>
+          <p>
+            Five titles published as founder — from Witching Nights: Tower Defense on Google
+            Play to Anominal and Them's Tale on Steam — proving local developers can ship to a
+            global standard.
+          </p>
+        </li>
+        <li class="reveal" data-tone="navy">
+          <span class="phase">Prove — next</span>
+          <h3>Make engagement an engineering discipline</h3>
+          <p>
+            Through NPI, serious games and gamification that move measurable business KPIs —
+            the service engine that funds original creative IP without surrendering it.
+          </p>
+        </li>
+        <li class="reveal" data-tone="brown">
+          <span class="phase">Elevate — beyond</span>
+          <h3>Make Myanmar a serious player in the global game industry</h3>
+          <p>
+            Original titles on global platforms, a publishing bridge international studios
+            trust, and a generation of developers who never had to teach themselves alone.
+          </p>
+        </li>
+      </ol>
+    </section>
+
     <section id="work">
       <h2 class="section-label">Selected Work</h2>
 
-      <a class="work-item" href="https://play.google.com/store/apps/details?id=com.FortiCrabGames.WitchingNightsTowerDefense"
+      <a class="work-item reveal" href="https://play.google.com/store/apps/details?id=com.FortiCrabGames.WitchingNightsTowerDefense"
         target="_blank" rel="noopener">
         <div class="work-head">
           <h3>Witching Nights: Tower Defense</h3>
           <span class="work-meta">Google Play · 4.7★</span>
         </div>
         <p>
-          Dark-fantasy idle tower defense. I led the design and the entire progression
-          economy — stat curves, wave tables, upgrade math — from first formula to live game.
+          Dark-fantasy idle tower defense, developed and published as founder. I led the design
+          and the entire progression economy — stat curves, wave tables, upgrade math — from
+          first formula to live game.
+        </p>
+      </a>
+
+      <a class="work-item reveal" href="https://www.gamemakersmm.com/en" target="_blank" rel="noopener">
+        <div class="work-head">
+          <h3>Published as founder — GMM</h3>
+          <span class="work-meta">Steam · Google Play · itch.io</span>
+        </div>
+        <p>
+          Anominal and Them's Tale – The Road To Her on Steam, Silent Reverie on Google Play,
+          Nobody Knows What Happened on itch.io — Myanmar-made titles taken to global
+          storefronts through Game Makers Myanmar's publishing arm.
         </p>
       </a>
 
@@ -180,6 +237,51 @@
       </ul>
     </section>
 
+    <section id="play">
+      <h2 class="section-label">Play Me</h2>
+      <p class="lede">Sittuyin — Burmese chess, against me.</p>
+      <p class="note" style="margin-top:12px">
+        The game my country has played for a thousand years, with an opponent who builds game
+        AI for a living. Faithful piece movement, X-line promotion, no castling — and yes,
+        I will comment on your moves.
+      </p>
+
+      <div id="sittuyin" class="game-frame">
+
+        <div class="board-wrap">
+          <div class="board" data-board></div>
+          <div class="tutorial" data-tutorial hidden>
+            <h4 data-tut-title></h4>
+            <p data-tut-body></p>
+            <div class="tut-nav">
+              <span class="step" data-tut-step></span>
+              <button class="tut-skip" data-tut-skip>Skip</button>
+              <button data-tut-back>Back</button>
+              <button data-tut-next>Next</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="nyan-panel">
+          <div class="nyan-head">
+            <img src="./assets/images/my-avatar-human.png" alt="Nyan Kyaw">
+            <div class="who">
+              <strong>Nyan</strong>
+              <span>your opponent</span>
+            </div>
+          </div>
+          <p class="bubble" data-say>Let's play. Tap a Red piece to begin.</p>
+          <p class="game-status" data-status>Your move.</p>
+          <div class="game-actions">
+            <button data-newgame>New game</button>
+            <button data-rules>Rules</button>
+            <button data-mute>Sound: on</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <section id="contact">
       <h2 class="section-label">Contact</h2>
       <p class="lede">Working on something that needs structure?</p>
@@ -208,7 +310,9 @@
 
   </div>
 
-  <script src="./assets/js/quiet-field.js"></script>
+  <script src="./assets/js/quiet-field-3d.js"></script>
+  <script src="./assets/js/interactions.js"></script>
+  <script src="./assets/js/sittuyin.js"></script>
 
 </body>
 
