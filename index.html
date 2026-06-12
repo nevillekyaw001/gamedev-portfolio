@@ -16,7 +16,7 @@
     href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500&family=Noto+Sans+Myanmar:wght@400;700&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="./assets/css/minimal.css">
+  <link rel="stylesheet" href="./assets/css/minimal.css?v=4">
 
   <!-- shared iconography -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -54,6 +54,30 @@
     <symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <path d="M5 21V4c4-2.5 8 2.5 14 0v10c-6 2.5-10-2.5-14 0"/>
     </symbol>
+    <symbol id="i-build" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14.5 6.5 17 4a4.2 4.2 0 0 1 3 5.2l-2.7 2.7-4.2-4.2 1.4-1.2Z"/><path d="m5 19 7-7"/><path d="M4 20l1-1"/><path d="M9.5 5.5 7 3 3 7l2.5 2.5"/><path d="m14 14 5 5"/>
+    </symbol>
+    <!-- sittuyin royal army -->
+    <symbol id="p-king" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M11.2 1.8h1.6l1 2.7h-3.6l1-2.7zM8.9 5.7h6.2l1 2.4H7.9l1-2.4zM7.3 9.3h9.4l1.1 2.6H6.2l1.1-2.6zM5.7 13.1h12.6l1 2.6H4.7l1-2.6zM7.4 16.9h9.2v2.4H7.4z"/>
+    </symbol>
+    <symbol id="p-general" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.9 3.1c.6 0 1 .5 1 1-.3 3.4-2 7-4.8 9.8l-1-1-4-4-1-1c2.8-2.8 6.4-4.5 9.8-4.8zM9.9 9.1 8.5 10.5l2 2-3.2 3.2c-.6-.2-1.3 0-1.8.4-.8.8-.8 2.1 0 2.9.8.8 2.1.8 2.9 0 .4-.5.6-1.2.4-1.8l3.2-3.2 2 2 1.4-1.4-5.5-5.5z"/>
+    </symbol>
+    <symbol id="p-elephant" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M4.5 19v-5.7C4.5 8.6 7.9 5.8 12.1 5.8c3.6 0 6.9 2 7.5 5.1.4 2-.5 3.7-2.1 4-1.1.2-2.1-.3-2.6-1.2l1.4 5.3h-3.2l-1-3.7c-.7.2-1.4.3-2.1.2V19H4.5z"/>
+    </symbol>
+    <symbol id="p-horse" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M6 19.5c.3-4.8 2-7.9 5-9.7l-.7-1.7 2.5-2.5 1 2c3 .4 5.2 2.7 5.5 5.8l-2.4.6c-.6-1-1.5-1.7-2.6-2 .9 1.8 1.2 4.1.8 7.5H6z"/>
+    </symbol>
+    <symbol id="p-chariot" viewBox="0 0 24 24" fill="currentColor">
+      <path fill-rule="evenodd" d="M12 2.8a9.2 9.2 0 1 1 0 18.4 9.2 9.2 0 0 1 0-18.4zm0 2.4a6.8 6.8 0 1 0 0 13.6 6.8 6.8 0 0 0 0-13.6z"/>
+      <path d="M11.1 5.5h1.8V11l4 2.3-.9 1.6L11.1 12V5.5z"/>
+      <circle cx="12" cy="12" r="1.7"/>
+    </symbol>
+    <symbol id="p-pawn" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 3.2c2.4 1.3 4.8 2 7.1 2.1-.2 6.5-2.6 11.4-7.1 15.1C7.5 16.7 5.1 11.8 4.9 5.3 7.2 5.2 9.6 4.5 12 3.2z"/>
+    </symbol>
   </svg>
 </head>
 
@@ -81,24 +105,33 @@
       <article class="tab active" data-tab="home">
 
         <header class="hero">
-          <h1 class="reveal">Nyan Kyaw</h1>
-          <p class="statement reveal">I see chaos and create structure.</p>
-          <p class="intro note reveal">
-            Hi - I'm a game developer and founder from Myanmar, living in Bangkok. I run
-            <strong>Game Makers Myanmar</strong> and <strong>NagaPlus Interactive</strong>,
-            and I've spent the last six years shipping games and helping other people ship
-            theirs.
-          </p>
+          <div class="hero-grid">
+            <div>
+              <h1 class="reveal">Nyan Kyaw</h1>
+              <p class="statement reveal">Building Myanmar's game ecosystem.</p>
+              <p class="intro note reveal">
+                Game Studio Founder · Game Developer · Educator. I run
+                <strong>Game Makers Myanmar</strong> and <strong>NagaPlus Interactive</strong>
+                from Bangkok, and I've spent six years shipping games and helping other
+                people ship theirs.
+              </p>
 
-          <div class="cta-row reveal">
-            <button class="btn btn-gold" data-goto="play">
-              <svg><use href="#i-board"/></svg>
-              Play me in Sittuyin
-            </button>
-            <button class="btn btn-jade" data-goto="work">
-              <svg><use href="#i-pad"/></svg>
-              See my work
-            </button>
+              <div class="cta-row reveal">
+                <button class="btn btn-gold" data-goto="play">
+                  <svg><use href="#i-board"/></svg>
+                  Play me in Sittuyin
+                </button>
+                <button class="btn btn-jade" data-goto="work">
+                  <svg><use href="#i-pad"/></svg>
+                  See my work
+                </button>
+              </div>
+            </div>
+
+            <div class="portrait-wrap reveal">
+              <img src="./assets/images/profile.png" alt="Nyan Kyaw, smiling with a thumbs up"
+                onerror="this.onerror=null;this.src='./assets/images/my-avatar-human.png'">
+            </div>
           </div>
 
           <div class="stat-row reveal">
@@ -130,11 +163,13 @@
           <h2 class="section-label"><svg><use href="#i-flag"/></svg>Why I do this</h2>
           <p class="lede">
             I taught myself game development with slow internet and no industry around me.
-            It shouldn't have to be that hard. So I'm working on Myanmar's game industry -
-            <em class="gold">teaching</em> developers in our own language,
-            <em class="jade">publishing</em> their games to the world, and trying to prove,
-            project by project, that world-class games can come from anywhere.
+            It shouldn't have to be that hard. So I see chaos and create structure:
           </p>
+          <ul class="dots" style="margin-top:16px">
+            <li><em class="gold">Teach</em> - game development in our own language, so the next generation starts years ahead of where I did.</li>
+            <li data-dot="jade"><em class="jade">Publish</em> - Myanmar-made games on world storefronts, with developer-first terms.</li>
+            <li data-dot="lacquer"><em class="lacquer">Prove</em> - project by project, that world-class games can come from anywhere.</li>
+          </ul>
         </section>
 
       </article>
@@ -144,15 +179,15 @@
         <h2 class="section-label"><svg><use href="#i-board"/></svg>Play me</h2>
         <p class="lede reveal">Sittuyin - Burmese chess, against me.</p>
         <p class="note reveal" style="margin-top:12px">
-          This is the chess my country has played for a thousand years, in tea shops and
-          temple courtyards. The board wears our lacquerware colors - red and black discs,
-          gold general's lines - and your opponent builds game AI for a living. I'll explain
-          everything before we start, and yes, I will comment on your moves.
+          The chess my country has played for a thousand years, in tea shops and temple
+          courtyards. The board wears our lacquerware colors, and every disc carries the
+          mark of the old royal army - crown, sword, elephant, horse, chariot, shield.
+          I'll explain everything before we start, and yes, I will comment on your moves.
         </p>
 
         <div id="sittuyin" class="game-frame reveal">
 
-          <div class="board-wrap">
+          <div class="board-wrap board-stage">
             <div class="board" data-board></div>
             <div class="tutorial" data-tutorial hidden>
               <h4 data-tut-title></h4>
@@ -189,27 +224,12 @@
       <!-- WORK -->
       <article class="tab" data-tab="work">
         <h2 class="section-label"><svg><use href="#i-pad"/></svg>Selected work</h2>
-        <p class="note reveal" style="margin-bottom:26px">
-          Games I've built, balanced or published - some as a developer inside studios,
-          some as a founder with my own teams.
-        </p>
+        <canvas id="pad3d-canvas" aria-hidden="true"></canvas>
+
+        <h3 class="work-sub reveal"><svg><use href="#i-build"/></svg>Built
+          <small>as a developer, in studios and solo</small></h3>
 
         <div class="work-grid">
-
-          <a class="game-card reveal" data-tilt
-            href="https://play.google.com/store/apps/details?id=com.FortiCrabGames.WitchingNightsTowerDefense"
-            target="_blank" rel="noopener">
-            <div class="shot"><div class="shot-witch"><span>Witching Nights</span></div></div>
-            <div class="body">
-              <h3>Witching Nights: Tower Defense</h3>
-              <p class="meta">Google Play · 4.7★ · founder</p>
-              <p>
-                A dark-fantasy idle tower defense we developed and published ourselves. I led
-                the design and built the whole progression economy - every stat curve, wave
-                table and upgrade formula.
-              </p>
-            </div>
-          </a>
 
           <a class="game-card reveal" data-tilt
             href="https://store.steampowered.com/app/2638370/Five_Nights_at_Freddys_Into_the_Pit/"
@@ -220,7 +240,7 @@
               <p class="meta">Steam · Mega Cat Studios</p>
               <p>
                 Gameplay and systems programming on the hit horror adventure - mechanics, UI
-                and the NPC AI state machines that keep you running.
+                and the enemy behavior systems that keep you running.
               </p>
             </div>
           </a>
@@ -245,8 +265,7 @@
               <h3>Fruit Splash</h3>
               <p class="meta">Google Play · self-published</p>
               <p>
-                A connect-the-fruit puzzle game with 1000 levels. Part of the F2P mobile
-                catalogue I built and monetized end to end.
+                A connect-the-fruit puzzle with 1000 levels, built and monetized end to end.
               </p>
             </div>
           </a>
@@ -265,38 +284,81 @@
             </div>
           </a>
 
-          <a class="game-card reveal" data-tilt href="https://www.youtube.com/watch?v=FqPjxu27er8"
+        </div>
+
+        <div class="studio-row reveal">
+          <span class="label">Studios I've shipped with</span>
+          <img src="./assets/images/mega_cat.png" alt="Mega Cat Studios" title="Mega Cat Studios">
+          <img src="./assets/images/Goat-Logo-Chrismas.png" alt="GOAT Studios" title="GOAT Studios">
+          <img src="./assets/images/mawdev.jpg" alt="MawDev GDT" title="MawDev GDT">
+        </div>
+
+        <h3 class="work-sub reveal"><svg><use href="#i-ship"/></svg>Published
+          <small>as founder, through Game Makers Myanmar</small></h3>
+
+        <div class="work-grid">
+
+          <a class="game-card reveal" data-tilt
+            href="https://play.google.com/store/apps/details?id=com.FortiCrabGames.WitchingNightsTowerDefense"
             target="_blank" rel="noopener">
-            <div class="shot"><img src="./assets/images/Pj_3-01.png" alt="Puci Run!"></div>
+            <div class="shot"><div class="shot-witch shot-banner"><span>Witching Nights</span></div></div>
             <div class="body">
-              <h3>Puci Run!</h3>
-              <p class="meta">Mobile · self-published</p>
+              <h3>Witching Nights: Tower Defense</h3>
+              <p class="meta">Google Play · 4.7★ · developed &amp; published</p>
               <p>
-                A pixel-art endless runner with cats, powerups and far too much charm for its
-                file size.
+                Our dark-fantasy idle tower defense. I led the design and built the whole
+                progression economy - every stat curve, wave table and upgrade formula.
               </p>
             </div>
           </a>
 
-        </div>
+          <a class="game-card reveal" data-tilt href="https://www.gamemakersmm.com/en" target="_blank" rel="noopener">
+            <div class="shot"><div class="shot-anominal shot-banner"><span>Anominal</span></div></div>
+            <div class="body">
+              <h3>Anominal</h3>
+              <p class="meta">Steam · published</p>
+              <p>
+                A Myanmar-made title our publishing team carried to Steam - proof the
+                pipeline works.
+              </p>
+            </div>
+          </a>
 
-        <div class="pub-strip card reveal" data-tilt>
-          <h3>Published as founder, through Game Makers Myanmar</h3>
-          <p>
-            Myanmar-made games our publishing team took to global storefronts. Every one of
-            these shipped because a local developer finished what they started - that's the
-            part I'm proudest of.
-          </p>
-          <div class="chip-row">
-            <a class="chip" href="https://www.gamemakersmm.com/en" target="_blank" rel="noopener">
-              <svg><use href="#i-spark"/></svg>Anominal · Steam</a>
-            <a class="chip" href="https://www.gamemakersmm.com/en" target="_blank" rel="noopener">
-              <svg><use href="#i-spark"/></svg>Them's Tale - The Road To Her · Steam</a>
-            <a class="chip" href="https://www.gamemakersmm.com/en" target="_blank" rel="noopener">
-              <svg><use href="#i-spark"/></svg>Silent Reverie · Google Play</a>
-            <a class="chip" href="https://www.gamemakersmm.com/en" target="_blank" rel="noopener">
-              <svg><use href="#i-spark"/></svg>Nobody Knows What Happened · itch.io</a>
-          </div>
+          <a class="game-card reveal" data-tilt href="https://www.gamemakersmm.com/en" target="_blank" rel="noopener">
+            <div class="shot"><div class="shot-thems shot-banner"><span>Them's Tale</span></div></div>
+            <div class="body">
+              <h3>Them's Tale - The Road To Her</h3>
+              <p class="meta">Steam · published</p>
+              <p>
+                A narrative journey from a local developer who finished what they started -
+                my favorite kind of launch.
+              </p>
+            </div>
+          </a>
+
+          <a class="game-card reveal" data-tilt href="https://www.gamemakersmm.com/en" target="_blank" rel="noopener">
+            <div class="shot"><div class="shot-silent shot-banner"><span>Silent Reverie</span></div></div>
+            <div class="body">
+              <h3>Silent Reverie</h3>
+              <p class="meta">Google Play · published</p>
+              <p>
+                An atmospheric mobile title we took from local build to global storefront.
+              </p>
+            </div>
+          </a>
+
+          <a class="game-card reveal" data-tilt href="https://www.gamemakersmm.com/en" target="_blank" rel="noopener">
+            <div class="shot"><div class="shot-nobody shot-banner"><span>Nobody Knows What Happened</span></div></div>
+            <div class="body">
+              <h3>Nobody Knows What Happened</h3>
+              <p class="meta">itch.io · published</p>
+              <p>
+                An experimental indie release - because not every first game needs a
+                storefront gate to matter.
+              </p>
+            </div>
+          </a>
+
         </div>
       </article>
 
@@ -305,29 +367,31 @@
         <h2 class="section-label"><svg><use href="#i-flag"/></svg>Ventures</h2>
 
         <div class="venture card reveal" data-tone="gold" data-tilt>
+          <img class="venture-logo" src="./assets/images/gmm-logo.png" alt="Game Makers Myanmar logo">
           <div class="venture-head">
             <h3>Game Makers Myanmar</h3>
             <span class="role">Founder &amp; CEO · Lead Instructor</span>
           </div>
-          <p>
-            Our Yangon team teaches game development in Burmese, runs the jams and showcases
-            where Myanmar's developers find each other, and publishes their games - five
-            titles so far across Google Play, Steam and itch.io. The long game: become the
-            country's home-grown publisher.
-          </p>
+          <ul class="dots">
+            <li>Teaches game development in Burmese, through our Yangon academy.</li>
+            <li>Runs the jams and showcases where Myanmar's developers find each other.</li>
+            <li>Has published five titles across Google Play, Steam and itch.io.</li>
+            <li>The long game: become the country's home-grown publisher.</li>
+          </ul>
           <p class="tagline">Learn to build, Inspire to play.</p>
         </div>
 
         <div class="venture card reveal" data-tone="jade" data-tilt>
+          <span class="venture-mark" aria-hidden="true">N+</span>
           <div class="venture-head">
             <h3>NagaPlus Interactive</h3>
             <span class="role">Founder &amp; CEO</span>
           </div>
-          <p>
-            A Singapore-headquartered studio with production roots in Myanmar. We design
-            serious games and gamification that answer to real business outcomes - and that
-            service work funds the original titles we're building for global storefronts.
-          </p>
+          <ul class="dots">
+            <li data-dot="jade">Singapore-headquartered studio, production roots in Myanmar.</li>
+            <li data-dot="jade">Serious games and gamification, accountable to real business outcomes.</li>
+            <li data-dot="jade">Service work funds the original titles we're building for global storefronts.</li>
+          </ul>
           <p class="tagline">Make Interactive Solutions That IMPACT.</p>
         </div>
 
@@ -394,7 +458,7 @@
             </p>
             <ul class="free-links">
               <li><a href="https://www.youtube.com/watch?v=dIzBwW_y4Fs" target="_blank" rel="noopener">
-                Interactive AI NPC <span>real-time LLM dialogue in Unity</span></a></li>
+                Living NPC dialogue experiment <span>real-time conversations in Unity</span></a></li>
               <li><a href="https://www.youtube.com/watch?v=ZZlj3cwV2LI" target="_blank" rel="noopener">
                 Beyond the Legend devlog <span>4-player PvP smash prototype</span></a></li>
               <li><a href="https://www.youtube.com/watch?v=wGhuF3iwJNU" target="_blank" rel="noopener">
@@ -431,11 +495,26 @@
                 GMM Academy <span>Burmese-language curriculum</span></a></li>
               <li><a href="https://www.linkedin.com/in/nyannevillekyaw001/" target="_blank" rel="noopener">
                 My LinkedIn notes <span>lessons from running game ventures</span></a></li>
-              <li><a href="mailto:nyankyaw.gamedev@gmail.com">
-                For businesses <span>NPI builds serious games and gamification</span></a></li>
+              <li><a href="./legacy.html" target="_blank" rel="noopener">
+                My 2024 portfolio <span>preserved as a time capsule - we all start somewhere</span></a></li>
             </ul>
           </div>
 
+        </div>
+
+        <div class="venture-banner reveal" data-tilt>
+          <h3>Liked the free stuff? This is what we do all day.</h3>
+          <p>
+            Game Makers Myanmar turns beginners into shipped developers. NagaPlus
+            Interactive builds games and gamification that move real business numbers.
+            Either way, it starts with a hello.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-gold" href="https://www.gamemakersmm.com/en" target="_blank" rel="noopener">
+              <svg><use href="#i-cap"/></svg>Join GMM Academy</a>
+            <a class="btn btn-jade" href="mailto:nyankyaw.gamedev@gmail.com?subject=NagaPlus%20project">
+              <svg><use href="#i-spark"/></svg>Work with NagaPlus</a>
+          </div>
         </div>
       </article>
 
@@ -464,16 +543,17 @@
 
     <footer>
       <span>© 2026 Nyan Kyaw · Bangkok</span>
-      <span>Background: <a href="./assets/art/SOPHISTICATED-SYSTEMS.md">Sophisticated Systems</a> -
-        a seeded generative field</span>
+      <span>Designed and built by hand, with tea.</span>
     </footer>
 
   </div>
 
-  <script src="./assets/js/quiet-field-3d.js"></script>
-  <script src="./assets/js/tabs.js"></script>
-  <script src="./assets/js/interactions.js"></script>
-  <script src="./assets/js/sittuyin.js"></script>
+  <script src="./assets/js/quiet-field-3d.js?v=4"></script>
+  <script src="./assets/js/tabs.js?v=4"></script>
+  <script src="./assets/js/interactions.js?v=4"></script>
+  <script src="./assets/js/cursor.js?v=4"></script>
+  <script src="./assets/js/sittuyin.js?v=4"></script>
+  <script type="module" src="./assets/js/hero3d.js?v=4"></script>
 
 </body>
 

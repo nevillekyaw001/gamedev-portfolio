@@ -18,9 +18,13 @@
   var thinking = false;
 
   var VAL = { P: 100, F: 220, S: 260, N: 380, R: 550, K: 20000 };
-  // Burmese initials, as on traditional diagram sets:
-  // မ Min-gyi, စ Sit-ke, ဆ Sin, မြ Myin, ရ Yahhta, န Nè
-  var GLYPH = { K: 'မ', F: 'စ', S: 'ဆ', N: 'မြ', R: 'ရ', P: 'န' };
+  // Royal army iconography of the old Burmese kingdoms - each piece is
+  // its soldier: the hti spire for the king, the dha sword for the
+  // general, war elephant, cavalry, chariot wheel, infantry shield.
+  var GLYPH = {
+    K: '#p-king', F: '#p-general', S: '#p-elephant',
+    N: '#p-horse', R: '#p-chariot', P: '#p-pawn'
+  };
   var NAME = {
     K: 'Min-gyi (King)', F: 'Sit-ke (General)', S: 'Sin (Elephant)',
     N: 'Myin (Horse)', R: 'Yahhta (Chariot)', P: 'Nè (Feudal lord)'
@@ -318,9 +322,8 @@
   function pieceNode(pc, i) {
     var el = document.createElement('div');
     el.className = 'piece ' + (isRed(pc) ? 'piece-red' : 'piece-black');
-    var ic = document.createElement('i');
-    ic.textContent = GLYPH[pc.toUpperCase()];
-    el.appendChild(ic);
+    el.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><use href="' +
+      GLYPH[pc.toUpperCase()] + '"/></svg>';
     el.title = NAME[pc.toUpperCase()];
     positionPiece(el, i);
     boardEl.appendChild(el);
@@ -381,9 +384,10 @@
       moving.dataset.sq = m.to;
       if (m.promoted) {
         setTimeout(function () {
-          var ic = moving.querySelector('i');
-          if (ic) ic.textContent = GLYPH.F;
+          var use = moving.querySelector('use');
+          if (use) use.setAttribute('href', GLYPH.F);
           moving.classList.add('promoted');
+          celebrate(moving, 14);
         }, 220);
       }
     }
@@ -395,12 +399,23 @@
     root.querySelector('[data-status]').textContent = text;
   }
 
+  function celebrate(el, n) {
+    // Sparks via the cursor layer, if it's running.
+    if (typeof window.__spark !== 'function' || !el) return;
+    var r = el.getBoundingClientRect();
+    window.__spark(r.left + r.width / 2, r.top + r.height / 2, n);
+  }
+
   function endGame(result) {
     gameOver = true;
     thinking = false;
     boardEl.classList.add('done');
     if (result === 'aiWin') { say('aiWin', true); setStatus('Checkmate - Nyan wins.'); }
-    else if (result === 'playerWin') { say('playerWin', true); setStatus('Checkmate - you win!'); }
+    else if (result === 'playerWin') {
+      say('playerWin', true);
+      setStatus('Checkmate - you win!');
+      celebrate(boardEl, 36);
+    }
     else { say('draw', true); setStatus('Draw.'); }
   }
 
@@ -485,11 +500,11 @@
   var TUTORIAL = [
     {
       title: 'Sittuyin - Burmese chess',
-      body: "This is the chess of Myanmar, played for centuries in tea shops and temple courtyards. The pieces are lacquer discs - yours red, mine black - marked with Burmese letters, the way traditional diagram sets draw them. You play Red, and Red moves first. Win by checkmating my king. No castling, no shortcuts."
+      body: "This is the chess of Myanmar, played for centuries in tea shops and temple courtyards. The pieces are lacquer discs - yours red, mine black - and each carries the mark of the old royal army. You play Red, and Red moves first. Win by checkmating my king. No castling, no shortcuts."
     },
     {
-      title: 'The pieces',
-      body: "မ Min-gyi, the king - one step, any direction. စ Sit-ke, the general - one step, diagonal only. ဆ Sin, the elephant - one step diagonal, or one straight forward. မြ Myin, the horse - exactly like a chess knight. ရ Yahhta, the chariot - exactly like a rook. န Nè, the feudal lord - one step forward, captures diagonally, no double first step. Hover any disc and I'll remind you who it is."
+      title: 'The royal army',
+      body: "The spire crown is Min-gyi, the king: one step, any direction. The dha sword is Sit-ke, the general: one step, diagonal only. The elephant is Sin: one step diagonal, or one straight forward. The horse is Myin: exactly like a chess knight. The wheel is Yahhta, the chariot: exactly like a rook. The shield is Nè, the foot soldier: one step forward, captures diagonally, no double first step. Hover any disc and I'll remind you who it is."
     },
     {
       title: 'The gold lines',

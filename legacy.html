@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nyan Kyaw (Neville) - Game Developer Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/Goat-Logo-Chrismas.png" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/theme-3d.css">
+  <link rel="stylesheet" href="./assets/css/impact-roadmap.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<style>
+  .li-feed{
+    list-style-type: disc;
+    color:var(--light-gray);
+  }
+  @media screen and (min-width: 1000px) {
+    .skill{
+      display: flex;
+      justify-content: space-between;
+    }
+      .ul-skills{
+        width:49%;
+        display: flex;
+        justify-content: space-between;
+      }
+   }
+ 
+</style>
+<body>
+
+  <!--
+    - 3D animated background (Three.js)
+  -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar-human.png" alt="Nyan Kyaw" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Nyan Kyaw">Nyan Kyaw</h1>
+
+          <p style="margin-bottom:10px" class="title">Game Developer</p>
+          <p style="margin-bottom:10px" class="title">Gameplay Programmer</p>
+          <p class="title">GameDev Instructor &amp; Founder</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:nyankyaw.gamedev@gmail.com" class="contact-link">nyankyaw.gamedev@gmail.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:+66930639070" class="contact-link">+66930639070</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">CV</p>
+
+              <a target="_blank" style="color:cyan" href="https://docs.google.com/document/d/1ArfCqpVTY3_Ut7gFtc8nCNg62_C0PyHOPu7CErwG0XY/edit?usp=sharing">Download Here</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Bangkok, Thailand</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+<!-- insert link here -->
+          <li class="social-item">
+            <a href="https://github.com/nevillekyaw001" target="_blank" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="https://gitlab.com/nyankyaw001" target="_blank" class="social-link">
+              <ion-icon name="logo-gitlab"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://www.youtube.com/@neville-gamedev" target="_blank" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/nyannevillekyaw001/" target="_blank" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link active" data-nav-link>Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Projects</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Game</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+<!--
+        - #PORTFOLIO
+      -->
+
+<article class="portfolio active" data-page="portfolio">
+
+  <header>
+    <h2 class="h2 article-title">Portfolio</h2>
+  </header>
+
+  <section class="projects">
+
+    <!-- <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web design</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Applications</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web development</button>
+            </li>
+
+          </ul> -->
+
+    <div style="display:none" class="filter-select-box">
+
+      <button class="filter-select" data-select>
+
+        <div class="select-value" data-selecct-value>Select category</div>
+
+        <div class="select-icon">
+          <ion-icon name="chevron-down"></ion-icon>
+        </div>
+
+      </button>
+
+      <ul class="select-list">
+
+        <li class="select-item">
+          <button data-select-item>All</button>
+        </li>
+
+        <li class="select-item">
+          <button data-select-item>Web design</button>
+        </li>
+
+        <li class="select-item">
+          <button data-select-item>Applications</button>
+        </li>
+
+        <li class="select-item">
+          <button data-select-item>Web development</button>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <ul class="project-list">
+
+      <!-- <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/Pj_1-01.png" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Fruity Rush</h3>
+
+                <p class="project-category">Genre: Puzzle, 3-In-A-Row, Casual</p>
+                <p style="margin-left:10px" class="blog-text">Swipe on the fruits of the same color to destroy them. Do additional tasks! This game includes 1000 levels of fruity adventure throughout the map with different regions. Overly cute fruit visual and great visual effects has implemented for such lovely game.</p>
+
+              </a>
+            </li> -->
+
+      <li class="blog-post-item project-item active">
+        <a href="https://store.steampowered.com/app/2638370/Five_Nights_at_Freddys_Into_the_Pit/" target="_blank">
+
+          <figure class="blog-banner-box project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/fnaf_image.jpg" alt="Five Nights at Freddy's: Into the Pit" loading="lazy">
+          </figure>
+
+          <div class="blog-content">
+
+            <h3 class="h3 blog-item-title">Five Nights at Freddy's: Into the Pit</h3>
+            <div class="blog-meta">
+              <p class="blog-category">Genre: Adventure, Horror, Pixel Graphics</p>
+            </div>
+
+            <p class="blog-text">
+              Survive five nights of terror in this chilling adventure game. Travel between time periods to solve
+              puzzles, gather
+              clues, and outrun the threat relentlessly pursuing you. Move swiftly and stay hidden, and you may just
+              survive. But be
+              careful—it's not just your own life that’s on the line this time.
+            </p>
+
+          </div>
+
+        </a>
+      </li>
+
+      <li class="blog-post-item project-item active">
+        <a href="https://www.dapperdinos.com/" target="_blank">
+
+          <figure class="blog-banner-box project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/dapper_dinos_image.png" alt="Dapper Dinos" loading="lazy">
+          </figure>
+
+          <div class="blog-content">
+
+            <h3 class="h3 blog-item-title">Dapper Dinos</h3>
+            <div class="blog-meta">
+              <p class="blog-category">Genre: Adventure, 3D Platformer, Action</p>
+            </div>
+
+            <p class="blog-text">
+              Embark on an epic adventure in a 3D action platformer like no other. Fight your way through 20 enemies and
+              4 bosses, all
+              while customizing your dino with our innovative haberdashery system - and with blockchain technology, your
+              progress is
+              secure and your rewards are yours to keep!
+            </p>
+
+          </div>
+
+        </a>
+      </li>
+
+      <li class="blog-post-item project-item active">
+        <a href="https://play.google.com/store/apps/details?id=com.icegame.fruitlink&hl=en"
+          target="_blank">
+
+          <figure class="blog-banner-box project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/fruitsplash.jpg" alt="Fruit Splash" loading="lazy">
+          </figure>
+
+          <div class="blog-content">
+
+            <h3 class="h3 blog-item-title">Fruit Splash</h3>
+            <div class="blog-meta">
+              <p class="blog-category">Genre: Puzzle, 3-In-A-Row, Casual</p>
+            </div>
+
+            <p class="blog-text">
+              Fruit Splash is a very addictive connect lines puzzle game! Connect colorful lines of fruit to solve compelling levels in this puzzle adventure! So join this fruit world, match 3 or more fruits in this puzzle of lines!
+            </p>
+
+          </div>
+
+        </a>
+      </li>
+
+      <li class="blog-post-item project-item active">
+        <a target="_blank" href="https://www.youtube.com/embed/9_1C-YUGiSw">
+
+          <figure class="blog-banner-box project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <iframe class="" width="100%" height="100%" src="https://www.youtube.com/embed/9_1C-YUGiSw"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen=""></iframe>
+          </figure>
+
+          <div class="blog-content">
+
+            <h3 class="h3 blog-item-title">Seagull Legacy</h3>
+            <div class="blog-meta">
+              <p class="blog-category">Genre: Simulation, Endless runner, Casual</p>
+            </div>
+
+            <p class="blog-text">
+              Soar through the skies and collect fishes while navigating through various obstacles such as boats,
+              lighthouses, storm clouds and other hazards.
+            </p>
+
+          </div>
+
+        </a>
+      </li>
+      <li class="blog-post-item project-item active">
+        <a href="https://play.google.com/store/apps/details?id=com.G.O.A.TStudio.WheelToLive&hl=en&gl=US"
+          target="_blank">
+
+          <figure class="blog-banner-box project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/Pj_2-01.png" alt="Wheel To Live" loading="lazy">
+          </figure>
+
+          <div class="blog-content">
+
+            <h3 class="h3 blog-item-title">Wheel To Live</h3>
+            <div class="blog-meta">
+              <p class="blog-category">Genre: Rhythm, Casual</p>
+            </div>
+
+            <p class="blog-text">
+              Roll the ball on the wheel to survive against incoming blocks. Wheel on and live on to win the maximum
+              rank!
+            </p>
+
+          </div>
+
+        </a>
+      </li>
+
+      <li class="blog-post-item project-item active">
+        <a href="https://www.youtube.com/watch?v=FqPjxu27er8" target="_blank">
+
+          <figure class="blog-banner-box project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/Pj_3-01.png" alt="Puci Run!" loading="lazy">
+          </figure>
+
+          <div class="blog-content">
+
+            <h3 class="h3 blog-item-title">Puci Run!</h3>
+            <div class="blog-meta">
+              <p class="blog-category">Genre: Endless Runner, Casual</p>
+            </div>
+
+            <p class="blog-text">
+              Pixel Art game inspired from Adventure Time - Candy Kingdom with Cutie characters. Endless Runner mechanic
+              with multiple enemies, powerups, maps and cat selections.
+            </p>
+
+          </div>
+
+        </a>
+      </li>
+
+    </ul>
+
+  </section>
+
+</article>
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            Welcome to my portfolio! I’m <strong>Nyan Kyaw</strong>, an <strong>enthusiastic</strong> and <strong>skilled</strong>
+            game developer with <strong>over 4 years of experience</strong>. I’ve led
+            system implementations for hit titles like <strong>‘Five Nights at Freddy’s’</strong> and <strong>‘Dapper
+              Dinos,’</strong> as well as contributed to
+            <strong>profitable mobile games</strong>.
+            
+          </p>
+
+          <p>
+            My role involves <b>leveraging game engines</b> in which I am proficient and integrating <b>innovative gameplay solutions</b>. I achieve this by incorporating <b>diverse project management methodologies</b>.
+          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What I'm doing</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/gamepad-icon.gif
+                " alt="design icon" width="60">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Game Mechanics</h4>
+
+                <p class="service-item-text">
+                  <b>Collaborated with cross-functional teams</b> to design and implement innovative game mechanics, <b>enhancing player engagement and enjoyment</b>.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/system-icon.gif" alt="Web development icon" width="60">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Systems Integration</h4>
+
+                <p class="service-item-text">
+                  Led system integration efforts by closely <b>collaborating with game designers</b>, creating comprehensive <b>documentations</b>, and iteratively refining implementations <b>to achieve seamless gameplay experiences</b>.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/phone-icon.gif" alt="mobile app icon" width="60">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Mobile Games</h4>
+
+                <p class="service-item-text">
+                  Developed <b>successful mobile games</b> with organic reach, leveraging effective store presentation and <b>earning positive reviews</b> from players.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/money-icon.gif" alt="camera icon" width="60">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Monetization</h4>
+
+                <p class="service-item-text">
+                  Implemented diverse monetization strategies, including <b>ads (AdMob, other Ads APIs), in-app purchases (IAPs), subscriptions, and storefront sales</b>, resulting in substantial <b>five-digit</b> revenue.
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - impact roadmap
+        -->
+
+        <section class="impact">
+
+          <h3 class="h3 service-title">Impact Roadmap — Building Myanmar's Game Industry</h3>
+
+          <p class="impact-intro">
+            Beyond shipping games, I'm building the ecosystem that lets <b>Myanmar</b> build games —
+            teaching game development <b>in our own language</b>, growing the community that connects
+            developers, and proving that games made here can <b>compete globally</b>.
+          </p>
+
+          <div class="impact-stats">
+            <div class="impact-stat tilt-card">
+              <div class="impact-stat-inner">
+                <div class="impact-stat-number">100+</div>
+                <div class="impact-stat-label">Students taught</div>
+              </div>
+            </div>
+            <div class="impact-stat tilt-card">
+              <div class="impact-stat-inner">
+                <div class="impact-stat-number">4+</div>
+                <div class="impact-stat-label">Years shipping games</div>
+              </div>
+            </div>
+            <div class="impact-stat tilt-card">
+              <div class="impact-stat-inner">
+                <div class="impact-stat-number">2</div>
+                <div class="impact-stat-label">Ventures founded</div>
+              </div>
+            </div>
+          </div>
+
+          <ol class="impact-roadmap-list">
+
+            <li class="impact-step" data-accent="gmm">
+              <span class="impact-step-phase">Now — Educate</span>
+              <h4 class="impact-step-title">Train Myanmar's next generation of game developers</h4>
+              <p class="impact-step-text">
+                Through <b>Game Makers Myanmar</b>, I design and teach Burmese-language Unity bootcamps —
+                a beginner-to-published curriculum where students ship real mobile games. Building on the
+                <b>100+ students</b> I've already taught, the goal is simple: the strongest developer
+                talent pipeline in the country.
+              </p>
+            </li>
+
+            <li class="impact-step" data-accent="gmm-red">
+              <span class="impact-step-phase">Next — Connect &amp; Publish</span>
+              <h4 class="impact-step-title">Grow the community into real industry infrastructure</h4>
+              <p class="impact-step-text">
+                National game jams, showcases and developer awards that give Myanmar makers a stage —
+                plus a local publishing programme that takes Myanmar-made titles to a
+                <b>mobile-first market of millions</b> with developer-first terms.
+              </p>
+            </li>
+
+            <li class="impact-step">
+              <span class="impact-step-phase">Beyond — Build &amp; Prove</span>
+              <h4 class="impact-step-title">Ship games and interactive solutions that IMPACT</h4>
+              <p class="impact-step-text">
+                With <b>NagaPlus Interactive</b>, I lead a studio building serious games and gamification
+                that move real business KPIs — with original titles in production for global PC and
+                mobile storefronts. The ambition: put Myanmar on the map of the global game industry.
+              </p>
+            </li>
+
+          </ol>
+
+          <div class="impact-ventures">
+
+            <div class="impact-venture tilt-card" data-accent="gmm">
+              <div class="impact-venture-inner">
+                <div class="impact-venture-role">Founder &amp; CEO · Lead Instructor</div>
+                <div class="impact-venture-name">Game Makers Myanmar</div>
+                <p class="impact-venture-text">
+                  Yangon-based game education, publishing and community company — bridging global gaming
+                  into the local market and training Myanmar developers in their own language.
+                </p>
+                <span class="impact-venture-tagline">Authentic. Authoritative. Humble. Fun.</span>
+              </div>
+            </div>
+
+            <div class="impact-venture tilt-card">
+              <div class="impact-venture-inner">
+                <div class="impact-venture-role">Founder &amp; CEO</div>
+                <div class="impact-venture-name">NagaPlus Interactive</div>
+                <p class="impact-venture-text">
+                  Singapore-registered interactive studio crafting serious games, gamification and
+                  original titles — engagement engineering that moves business KPIs.
+                </p>
+                <span class="impact-venture-tagline">We Make Games That IMPACT.</span>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!--
+          - testimonials
+        -->
+
+        <section class="testimonials">
+
+          <h3 class="h3 testimonials-title">Organizations</h3>
+
+          <ul class="testimonials-list has-scrollbar">
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/mega_cat.png" alt="Mega Cat Studios" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>MEGA CAT STUDIOS</h4>
+                
+                <div class="testimonials-text" data-testimonials-text>
+                  <h5 class="h4 testimonials-item-title" data-testimonials-title style="font-size:16px; color:white; margin-left:0">Game Developer</h5>
+                  <time datetime="">Apr 2023 – Jun 2024</time>
+                  <p>
+                    At Mega Cat Studios, I <b>collaborated closely with cross-functional teams, including developers, artists, producers and other talented colleagues</b>. This dynamic environment allowed me to discover their exceptional work and contribute to hit-title games such as
+                    <b>‘Five Nights at Freddy’s: Into The Pit’</b> and <b>‘Dapper Dinos.’</b> My responsibilities spanned <b>system implementation, game mechanics, and bug fixes</b>, all managed under <b>various project managements</b>.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/Goat-Logo-Chrismas.png" alt="GOAT Studios" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>GOAT STUDIOS	</h4>
+                
+                <div class="testimonials-text" data-testimonials-text>
+                  <h5 class="h4 testimonials-item-title" data-testimonials-title style="font-size:16px; color:white; margin-left:0">Unity Developer</h5>
+                  <time datetime="">Feb 2020 – Feb 2023 </time>
+                  <p>
+                    At GOAT Studios, I explored new horizons in <b>mobile game development and publication, gaining insights into Google Play
+                    Store and Apple Store ecosystems</b>. Additionally, I <b>mastered C# object-oriented programming to create efficient, reusable code</b> for mobile games. My Unity expertise
+                    covered <b>scripting, textures, animations, and F2P monetization</b>. I actively contributed to <b>design reviews, prototypes, and
+                    technical issue resolution</b>.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/mawdev.jpg" style="border-radius: 25%;" alt="MawDev GDT" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>MAWDEV GDT</h4>
+                <div class="testimonials-text" data-testimonials-text>
+                  <h5 class="h4 testimonials-item-title" data-testimonials-title style="font-size:16px; color:white; margin-left:0">Game Development Lecturer</h5>
+                  <time datetime="">Feb 2022 – Jan 2023</time>
+                  <p>
+                    At MawDev Game Development Training, I instructed <b>over 100 students</b> in Unity game development. I guided them
+                    through <b>group projects, covering essential features, monetization strategies, and diverse mechanics</b>. My role included
+                    ensuring that course deliverables aligned with <b>best practices and current industry standards</b>. Additionally, I diligently
+                    <b>monitored student attendance during online classes, adhering to the educational curriculum and guidelines</b>.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/mega_cat.png" style="border-radius: 25%;" alt="Organization logo" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" style="border-radius: 25%;" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+  
+              <h4 class="h4 modal-title" data-modal-title></h4>
+      
+   
+              <div data-modal-text>
+                <p></p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <h3 class="h3 skills-title">My skills</h3>
+        <section class="skill">
+
+          <ul class="skills-list content-card ul-skills m-r">
+            <div>
+            <h5 class="h3 skills-title">Proficiencies</h5>
+            
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Gameplay Programming</h5>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Game Development</h5>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Object-oriented programming</h5>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Mobile Game Development (Android/ IOS)</h5>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Scrum (Agile Development)</h5>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">VR/AR</h5>
+              </div>
+            </li>
+          </div>
+          </ul>
+          <ul class="skills-list content-card ul-skills">
+            <div>
+              <h5 class="h3 skills-title">Programming Languages</h5>
+                <li class="skills-item">
+                <div class="title-wrapper">
+                <h5 class="h5">C#</h5>
+                </div>
+                </li>
+          
+                <li class="skills-item">
+                  <div class="title-wrapper">
+                   <h5 class="h5">C</h5>
+                  </div>
+                </li>
+                <li class="skills-item">
+                  <div class="title-wrapper">
+                    <h5 class="h5">C++</h5>
+                  </div>
+                 </li>
+                <li class="skills-item">
+                   <div class="title-wrapper">
+                     <h5 class="h5">Python</h5>
+                  </div>
+                </li>
+          
+            </div>
+          </ul>
+
+          <ul class="skills-list content-card ul-skills">
+            <div>
+              <h5 class="h3 skills-title">Tools</h5>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Unity</h5>
+                </div>
+              </li>
+
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Godot</h5>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Unreal</h5>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Version Controls</h5>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Visual Studio</h5>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Project Management Tools</h5>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Ad Management Plugins</h5>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Blender</h5>
+                </div>
+              </li>
+            </div>
+          </ul>
+
+        </section><br>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h3 class="h3 timeline-item-title">MEGA CAT STUDIOS</h3>
+              <h4 class="h4 timeline-item-title">Game Developer</h4>
+
+              <span>Apr 2023 – Jun 2024</span>
+
+              <p class="timeline-text">
+                <ul>
+                  <li class="li-feed">
+                    Proficient in C# and Unity’s scripting API, with a knack for crafting engaging gameplay mechanics, UIs and NPC AI state machines.
+                  </li>
+                  <li class="li-feed">
+                    Versed in version control with Git/SVN, enhancing team collaboration and project management in hit titles like Five Nights at Freddy’s and Dapper Dinos.
+                  </li>
+                  <li class="li-feed">
+                    Adept at leading teams for system implementations, and contributed interdisciplinary teamwork with developers, artists, and designers to bring creative visions to life.
+                  </li>
+                </ul>
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+              <h3 class="h3 timeline-item-title">GOAT STUDIOS</h3>
+              <h4 class="h4 timeline-item-title">Unity Developer</h4>
+
+              <span>Feb 2020 – Feb 2023</span>
+
+              <p class="timeline-text">
+                <ul>
+                  <li class="li-feed">
+                    Confidently writing efficient, organized, and comprehensible code by correctly implementing the principles of C# object-oriented programming to create reusable software tools and gameplay systems
+                  </li>
+                  <li class="li-feed">
+                    Working with strong knowledge of Unity including experience with scripting, textures, animation, GUI styles, and F2P monetization for publishing mobile games
+                  </li>
+                  <li class="li-feed">
+                    Conduct design reviews, programming prototypes, fixing technical issues, and documenting the game design process
+                  </li>
+                </ul>
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+              <h3 class="h3 timeline-item-title">MAWDEV GDT</h3>
+              <h4 class="h4 timeline-item-title">Game Development Lecturer</h4>
+
+              <span>Feb 2022 – Jan 2023</span>
+
+              <p class="timeline-text">
+                <ul>
+                  <li class="li-feed">
+                    Teach Unity game development to 100+ students with group projects, features, monetization, and different mechanics and make their own game
+                  </li>
+                  <li class="li-feed">
+                    Ensure Unity course deliverables are relevant and reflect best practices and current thinking
+                  </li>
+                  <li class="li-feed">
+                    Monitoring the student’s attendance to online classes and following educational curriculum and guidelines accurately
+                  </li>
+                </ul>
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">University of Portsmouth</h4>
+              <p style="color:white;margin-bottom:10px">Diploma in Electrical & Electronics Engineering  </p>
+              <span>2019 - 2022</span>
+
+              <p class="timeline-text">
+                <ul>
+                  <li class="li-feed">
+                    Participated in various engineering challenges with the knowledge of circuit design and Embedded C programming skills to build IoT devices
+                  </li>
+                  <li class="li-feed">
+                    Performed a wide range of experiments in the lab by operating computer-assisted design or engineering software and equipment
+                  </li>
+                  <li class="li-feed">
+                    Designing, implementing, or improving electrical instruments, facilities, components, equipment products, or systems
+                  </li>
+                </ul>
+              </p>
+
+            </li>
+
+      
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Singapore Polytechnic </h4>
+              <p style="color:white;margin-bottom:10px">Diploma in Robotics Engineering </p>
+              <span> 2019 - 2020</span>
+
+              <p class="timeline-text">
+                <ul>
+                  <li class="li-feed">
+                    Master essential C & C++ knowledge to get started with ROS smoothly
+                  </li>
+                  <li class="li-feed">
+                    Ensure that robotic machines operate safely, dependably, and with precision; identify and implement modifications
+                  </li>
+                  <li class="li-feed">
+                    Designs and develops robotic prototypes for constructs, configures, tests, and debugs robots and robotic systems
+                  </li>
+                </ul>
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        
+
+      </article>
+
+
+      <!--
+        - #BLOG
+      -->
+
+      <article class="projects" data-page="projects">
+
+        <header>
+          <h2 class="h2 article-title">Projects</h2>
+        </header>
+
+        <section class="blog-posts">
+
+          <ul class="blog-posts-list">
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <iframe class="" width="100%" height="100%" src="https://www.youtube.com/embed/dIzBwW_y4Fs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                </figure>
+
+                <div class="blog-content">
+
+                  
+                  <h3 class="h3 blog-item-title">Interactive Ai NPC</h3>
+
+                  <p class="blog-text">
+                    Interactive Ai NPC using OpenAI API to improve NPC dialogue system in real-time gameplay to enhance immersion and engagement.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <iframe class="" width="100%" height="100%" src="https://youtube.com/embed/ZZlj3cwV2LI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                </figure>
+
+                <div class="blog-content">
+
+                  <!-- <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div> -->
+
+                  <h3 class="h3 blog-item-title">Day 10 - Beyond the Legend (Dev - progress/ Part 1)</h3>
+
+                  <p class="blog-text">
+                    4 PvP Smash Game Prototype to test Animation, Combat Mechanics, Encapsulation and many more!
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <iframe class="card-img-top" width="100%" height="100%" src="https://youtube.com/embed/wGhuF3iwJNU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                </figure>
+
+                <div class="blog-content">
+                  <h3 class="h3 blog-item-title">My First Game - Monster Chase - Unity (Read Description)</h3>
+
+                  <p class="blog-text">
+                    Monster Chase (PC) - The theme of my very first game was Endless Runner game with differet enemies, learning from 7-hour Tutorial.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <iframe class="card-img-top" width="100%" height="100%" src="https://www.youtube.com/embed/vz7sy5wjDFE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" __idm_id__="507907"></iframe>
+                </figure>
+
+                <div class="blog-content">
+
+                 
+                  <h3 class="h3 blog-item-title">Shooter Game - Work Challenge</h3>
+
+                  <p class="blog-text">
+                    Shooter Game - Work Challenge, developed from scratch with multiple mechanics with FPS & AI features.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://github.com/nevillekyaw001/Mobile-Game-Dev-Asteroid-Avoider" target="_blank">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/SPj_1-01.png" alt="The forgotten art of spacing" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <h3 class="h3 blog-item-title">Asteroid Avoider</h3>
+
+                  <p class="blog-text">
+                    Asteroid Avoider Game in URP project template.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://github.com/nevillekyaw001/Mobile-Game-Dev-Simple-Driving" target="_blank">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/SPj_2-01.png" alt="Design digest #79" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <h3 class="h3 blog-item-title">Simple Driving Game</h3>
+
+                  <p class="blog-text">
+                    Simple driving Game with Portrait perspective
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://github.com/nevillekyaw001/Mobile-Game-Dev-Ball-Launcher" target="_blank">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/SPj_3-01.png" alt="Design digest #79" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <h3 class="h3 blog-item-title">Ball Launcher</h3>
+
+                  <p class="blog-text">
+                    Testing Device Simulation, Target Groups, New Input System with Touch & Dynamic Zoom for any mobile devices.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/SPj_4-01.png" alt="Design digest #79" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <h3 class="h3 blog-item-title">Space Shooter</h3>
+
+                  <p class="blog-text">
+                    Testing life system, Isometric view of space shooting mechanic.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #MINI GAME
+      -->
+
+      <article class="minigame" data-page="game">
+
+        <header>
+          <h2 class="h2 article-title">Mini Game</h2>
+        </header>
+
+        <section class="game-section">
+
+          <p class="game-intro">
+            <strong>Hyperdrive Dodge</strong> — a tiny 3D game I built with <b>Three.js</b>, running right inside this
+            portfolio. Steer the ship, dodge the incoming blocks, and chase the high score. The longer you survive,
+            the faster it gets!
+          </p>
+
+          <div class="game-frame" data-game-frame>
+
+            <canvas id="game-canvas"></canvas>
+
+            <div class="game-hud">
+              <span>Score: <strong data-game-score>0</strong></span>
+              <span>Best: <strong data-game-best>0</strong></span>
+            </div>
+
+            <div class="game-overlay active" data-game-overlay>
+              <h3 class="h3" data-game-overlay-title>Hyperdrive Dodge</h3>
+              <p data-game-overlay-text>
+                Dodge the blocks for as long as you can. Steer with the arrow keys or A / D — on mobile, just drag
+                left and right.
+              </p>
+              <button class="game-btn" data-game-start>
+                <ion-icon name="game-controller-outline"></ion-icon>
+                <span>Play</span>
+              </button>
+            </div>
+
+          </div>
+
+          <p class="game-controls-hint">
+            Controls: ← → or A / D to steer &nbsp;•&nbsp; Drag on touch screens &nbsp;•&nbsp; Space / Enter to restart
+          </p>
+
+        </section>
+
+      </article>
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d496114.05058424716!2d100.3027513812062!3d13.725047242717217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d6032280d61f3%3A0x10100b25de24820!2sBangkok!5e0!3m2!1sen!2sth!4v1718962030401!5m2!1sen!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form id="contact-form" action="https://formspree.io/f/xrbzzpod" class="form" method="post">
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+            
+              <input type="hidden" name="nickname" id="nickname" class="user-cannot-see" tabindex="-1" autocomplete="off">
+         
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit">
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+    <script>
+      function submitForm(event) {
+          event.preventDefault(); // Prevent default form submission
+          const form = document.getElementById('contact-form');
+          // Additional logic (e.g., validation) can go here
+          form.submit(); // Manually submit the form
+      }
+  </script>
+  
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - three.js library (3D background + mini game)
+  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/three-bg.js"></script>
+  <script src="./assets/js/interactive.js"></script>
+  <script src="./assets/js/minigame.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
