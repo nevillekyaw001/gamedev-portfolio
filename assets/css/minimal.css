@@ -1100,7 +1100,6 @@ html.has-cursor textarea { cursor: none; }
   color: rgba(237, 230, 212, 0.8);
 }
 
-.shot-anominal { background: radial-gradient(circle at 30% 25%, rgba(108, 198, 161, 0.35), transparent 60%), linear-gradient(160deg, #14201c, #101413 70%); }
 .shot-thems { background: radial-gradient(circle at 70% 30%, rgba(227, 179, 76, 0.3), transparent 60%), linear-gradient(160deg, #221a10, #131110 70%); }
 .shot-silent { background: radial-gradient(circle at 50% 20%, rgba(140, 150, 200, 0.3), transparent 60%), linear-gradient(160deg, #171a26, #101114 70%); }
 .shot-nobody { background: radial-gradient(circle at 75% 70%, rgba(212, 96, 79, 0.3), transparent 60%), linear-gradient(160deg, #241414, #121010 70%); }
