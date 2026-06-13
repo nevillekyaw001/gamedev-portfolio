@@ -55,32 +55,56 @@ import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
       pad.add(grip);
     });
 
-    // d-pad (gold cross)
-    var gold = material(0xe3b34c, 0.35);
-    var dp1 = new THREE.Mesh(new THREE.BoxGeometry(0.62, 0.2, 0.16), gold);
-    var dp2 = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.62, 0.16), gold);
-    dp1.position.set(-0.95, 0.12, 0.32);
-    dp2.position.set(-0.95, 0.12, 0.32);
-    pad.add(dp1); pad.add(dp2);
-
-    // face buttons (jade, lacquer, stone, gold)
-    var cols = [0x6cc6a1, 0xd4604f, 0xede6d4, 0xe3b34c];
-    var spots = [[0.75, 0.32], [1.15, 0.12], [0.75, -0.08], [0.95, 0.12]];
-    spots.forEach(function (p, i) {
-      var b = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.11, 0.14, 18), material(cols[i], 0.3));
-      b.rotation.x = Math.PI / 2;
-      b.position.set(p[0], p[1], 0.32);
-      pad.add(b);
+    // shoulder bumpers (top edge, left + right)
+    [-1, 1].forEach(function (side) {
+      var bump = new THREE.Mesh(new THREE.BoxGeometry(0.95, 0.22, 0.4), charcoal);
+      bump.position.set(side * 1.05, 0.72, -0.12);
+      bump.rotation.z = side * -0.06;
+      pad.add(bump);
     });
 
-    // sticks
-    [-0.4, 0.35].forEach(function (x) {
-      var stem = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.3, 12), charcoal);
+    // d-pad: a clean plus on the left, aligned with the face cluster
+    var gold = material(0xf4ba38, 0.35);
+    var dpx = -0.95, dpy = 0.05;
+    var dp1 = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.2, 0.16), gold);
+    var dp2 = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.6, 0.16), gold);
+    dp1.position.set(dpx, dpy, 0.32);
+    dp2.position.set(dpx, dpy, 0.32);
+    pad.add(dp1); pad.add(dp2);
+
+    // face buttons: a proper ABXY diamond around (0.95, 0.05)
+    var fcx = 0.95, fcy = 0.05, sp = 0.3;
+    var face = [
+      { col: 0x4fd6a3, dx: 0, dy: sp },       // top
+      { col: 0xf2654d, dx: sp, dy: 0 },       // right
+      { col: 0xf2ecdc, dx: 0, dy: -sp },      // bottom
+      { col: 0xf4ba38, dx: -sp, dy: 0 }       // left
+    ];
+    face.forEach(function (b) {
+      var m = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.13, 0.15, 20), material(b.col, 0.28));
+      m.rotation.x = Math.PI / 2;
+      m.position.set(fcx + b.dx, fcy + b.dy, 0.33);
+      pad.add(m);
+    });
+
+    // start / select pills in the centre
+    [-0.22, 0.22].forEach(function (x) {
+      var pill = new THREE.Mesh(new THREE.CapsuleGeometry(0.05, 0.16, 4, 8), material(0x4a4438, 0.5));
+      pill.rotation.z = Math.PI / 2;
+      pill.position.set(x, 0.34, 0.3);
+      pad.add(pill);
+    });
+
+    // two analog sticks, symmetric and lower
+    [-0.5, 0.5].forEach(function (x) {
+      var stem = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 0.28, 14), charcoal);
       stem.rotation.x = Math.PI / 2;
-      stem.position.set(x, -0.22, 0.36);
-      var cap = new THREE.Mesh(new THREE.SphereGeometry(0.17, 16, 12), material(0x3a352b, 0.5));
-      cap.position.set(x, -0.22, 0.5);
-      pad.add(stem); pad.add(cap);
+      stem.position.set(x, -0.42, 0.34);
+      var cap = new THREE.Mesh(new THREE.SphereGeometry(0.18, 18, 14), material(0x3a352b, 0.5));
+      cap.position.set(x, -0.42, 0.46);
+      var stickRim = new THREE.Mesh(new THREE.TorusGeometry(0.14, 0.025, 8, 20), gold);
+      stickRim.position.set(x, -0.42, 0.5);
+      pad.add(stem); pad.add(cap); pad.add(stickRim);
     });
 
     pad.rotation.x = 0.35;

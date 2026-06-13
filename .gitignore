@@ -1,0 +1,5 @@
+# Claude Code local tooling / session config
+.claude/
+
+# macOS
+.DS_Store

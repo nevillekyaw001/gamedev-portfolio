@@ -16,7 +16,7 @@
     href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500&family=Noto+Sans+Myanmar:wght@400;700&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="./assets/css/minimal.css?v=4">
+  <link rel="stylesheet" href="./assets/css/minimal.css?v=8">
 
   <!-- shared iconography -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -57,26 +57,45 @@
     <symbol id="i-build" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <path d="M14.5 6.5 17 4a4.2 4.2 0 0 1 3 5.2l-2.7 2.7-4.2-4.2 1.4-1.2Z"/><path d="m5 19 7-7"/><path d="M4 20l1-1"/><path d="M9.5 5.5 7 3 3 7l2.5 2.5"/><path d="m14 14 5 5"/>
     </symbol>
-    <!-- sittuyin royal army -->
+    <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10 13a5 5 0 0 0 7.1 0l2.9-3a5 5 0 0 0-7.1-7L11.3 4.6"/>
+      <path d="M14 11a5 5 0 0 0-7.1 0L4 14a5 5 0 0 0 7.1 7l1.6-1.5"/>
+    </symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 11.5a8 8 0 0 1-11.6 7.1L3.5 20l1.4-5.4A8 8 0 1 1 21 11.5Z"/>
+      <path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/>
+    </symbol>
+    <!-- sittuyin royal army: crown, sword, elephant, knight, wheel, pawn -->
     <symbol id="p-king" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M11.2 1.8h1.6l1 2.7h-3.6l1-2.7zM8.9 5.7h6.2l1 2.4H7.9l1-2.4zM7.3 9.3h9.4l1.1 2.6H6.2l1.1-2.6zM5.7 13.1h12.6l1 2.6H4.7l1-2.6zM7.4 16.9h9.2v2.4H7.4z"/>
+      <path d="M3.5 17.2 4.9 7.4l3.8 4L12 5l3.3 6.4 3.8-4 1.4 9.8z"/>
+      <rect x="4" y="18.2" width="16" height="2.9" rx="0.8"/>
+      <circle cx="4.9" cy="7.4" r="1.05"/><circle cx="12" cy="5" r="1.15"/><circle cx="19.1" cy="7.4" r="1.05"/>
     </symbol>
     <symbol id="p-general" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M20.9 3.1c.6 0 1 .5 1 1-.3 3.4-2 7-4.8 9.8l-1-1-4-4-1-1c2.8-2.8 6.4-4.5 9.8-4.8zM9.9 9.1 8.5 10.5l2 2-3.2 3.2c-.6-.2-1.3 0-1.8.4-.8.8-.8 2.1 0 2.9.8.8 2.1.8 2.9 0 .4-.5.6-1.2.4-1.8l3.2-3.2 2 2 1.4-1.4-5.5-5.5z"/>
+      <path d="M12 2.3c.55.7.95 1.6.95 2.5V12h-1.9V4.8c0-.9.4-1.8.95-2.5z"/>
+      <rect x="8.5" y="11.7" width="7" height="2" rx="0.5"/>
+      <rect x="11.2" y="13.7" width="1.6" height="3.9" rx="0.4"/>
+      <path d="M12 17.2 13.7 19 12 20.8 10.3 19z"/>
     </symbol>
     <symbol id="p-elephant" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M4.5 19v-5.7C4.5 8.6 7.9 5.8 12.1 5.8c3.6 0 6.9 2 7.5 5.1.4 2-.5 3.7-2.1 4-1.1.2-2.1-.3-2.6-1.2l1.4 5.3h-3.2l-1-3.7c-.7.2-1.4.3-2.1.2V19H4.5z"/>
+      <ellipse cx="13" cy="8.8" rx="7" ry="6.6"/>
+      <path d="M10 12.5C8.2 14.5 7.7 17.3 9.2 19.2 10.4 20.7 12.5 21 14 19.8 15 19 15.3 17.7 14.7 16.6 14.4 16 13.7 15.8 13.2 16.1 13.9 16.5 14.1 17.4 13.7 18 13 19 11.6 19.2 10.6 18.4 9.2 17.3 8.9 15.2 9.7 13.4 10 12.8 10.4 12.3 10 12.5Z"/>
+      <path d="M9.4 13.6C8.7 14.6 8.4 15.8 8.6 17L9.7 16.5C9.5 15.6 9.6 14.6 10 13.8Z"/>
     </symbol>
     <symbol id="p-horse" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M6 19.5c.3-4.8 2-7.9 5-9.7l-.7-1.7 2.5-2.5 1 2c3 .4 5.2 2.7 5.5 5.8l-2.4.6c-.6-1-1.5-1.7-2.6-2 .9 1.8 1.2 4.1.8 7.5H6z"/>
+      <path d="M5.8 20.5C5.8 16.4 6.6 12.9 8.8 10.5L7.6 9.2C6.9 9.9 6 10.3 5 10.4L4.4 8.3C6.7 7.7 8.2 6.2 9.2 4.2L10.8 1.8 12.6 3.7C12.9 3.4 13.3 3.2 13.8 3.1L13.4 5C16.4 5.7 18.6 8.4 18.8 11.6L19.4 20.5Z"/>
     </symbol>
     <symbol id="p-chariot" viewBox="0 0 24 24" fill="currentColor">
-      <path fill-rule="evenodd" d="M12 2.8a9.2 9.2 0 1 1 0 18.4 9.2 9.2 0 0 1 0-18.4zm0 2.4a6.8 6.8 0 1 0 0 13.6 6.8 6.8 0 0 0 0-13.6z"/>
-      <path d="M11.1 5.5h1.8V11l4 2.3-.9 1.6L11.1 12V5.5z"/>
-      <circle cx="12" cy="12" r="1.7"/>
+      <path fill-rule="evenodd" d="M12 2.4a9.6 9.6 0 1 0 0 19.2 9.6 9.6 0 0 0 0-19.2zm0 2.3a7.3 7.3 0 1 1 0 14.6 7.3 7.3 0 0 1 0-14.6z"/>
+      <rect x="11.1" y="4.4" width="1.8" height="15.2" rx="0.5"/>
+      <rect x="11.1" y="4.4" width="1.8" height="15.2" rx="0.5" transform="rotate(90 12 12)"/>
+      <rect x="11.1" y="4.4" width="1.8" height="15.2" rx="0.5" transform="rotate(45 12 12)"/>
+      <rect x="11.1" y="4.4" width="1.8" height="15.2" rx="0.5" transform="rotate(135 12 12)"/>
+      <circle cx="12" cy="12" r="2.5"/>
     </symbol>
     <symbol id="p-pawn" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 3.2c2.4 1.3 4.8 2 7.1 2.1-.2 6.5-2.6 11.4-7.1 15.1C7.5 16.7 5.1 11.8 4.9 5.3 7.2 5.2 9.6 4.5 12 3.2z"/>
+      <path d="M12 3.4a3 3 0 0 1 1.9 5.3c1 .7 1.7 1.7 2 2.9H8.1c.3-1.2 1-2.2 2-2.9A3 3 0 0 1 12 3.4z"/>
+      <path d="M8.3 12.2h7.4l-1 4.2c1.25.6 2.05 1.5 2.35 2.8H6.95c.3-1.3 1.1-2.2 2.35-2.8z"/>
     </symbol>
   </svg>
 </head>
@@ -89,20 +108,20 @@
 
     <header class="top">
       <a class="brand" href="#home" data-goto="home">Nyan Kyaw</a>
-      <nav class="tabbar" role="tablist">
-        <button data-tab-btn="home" class="active">Home</button>
-        <button data-tab-btn="play">Play me</button>
-        <button data-tab-btn="work">Work</button>
-        <button data-tab-btn="ventures">Ventures</button>
-        <button data-tab-btn="free">Free stuff</button>
-        <button data-tab-btn="contact">Contact</button>
+      <nav class="tabbar" role="tablist" aria-label="Sections">
+        <button data-tab-btn="home" id="tab-home" role="tab" aria-selected="true" aria-controls="panel-home" class="active">Home</button>
+        <button data-tab-btn="play" id="tab-play" role="tab" aria-selected="false" aria-controls="panel-play">Play me</button>
+        <button data-tab-btn="work" id="tab-work" role="tab" aria-selected="false" aria-controls="panel-work">Work</button>
+        <button data-tab-btn="ventures" id="tab-ventures" role="tab" aria-selected="false" aria-controls="panel-ventures">Ventures</button>
+        <button data-tab-btn="free" id="tab-free" role="tab" aria-selected="false" aria-controls="panel-free">Free stuff</button>
+        <button data-tab-btn="contact" id="tab-contact" role="tab" aria-selected="false" aria-controls="panel-contact">Contact</button>
       </nav>
     </header>
 
     <main>
 
       <!-- HOME -->
-      <article class="tab active" data-tab="home">
+      <article class="tab active" data-tab="home" id="panel-home" role="tabpanel" aria-labelledby="tab-home" tabindex="-1">
 
         <header class="hero">
           <div class="hero-grid">
@@ -112,7 +131,7 @@
               <p class="intro note reveal">
                 Game Studio Founder · Game Developer · Educator. I run
                 <strong>Game Makers Myanmar</strong> and <strong>NagaPlus Interactive</strong>
-                from Bangkok, and I've spent six years shipping games and helping other
+                from Bangkok, and I've spent eight years shipping games and helping other
                 people ship theirs.
               </p>
 
@@ -137,15 +156,19 @@
           <div class="stat-row reveal">
             <div class="stat-chip" data-tilt data-tone="gold">
               <svg><use href="#i-ship"/></svg>
-              <div><strong>6+ years</strong><span>shipping games</span></div>
+              <div><strong>8+ years</strong><span>shipping games</span></div>
             </div>
             <div class="stat-chip" data-tilt data-tone="jade">
-              <svg><use href="#i-people"/></svg>
-              <div><strong>100+ devs</strong><span>trained in Burmese</span></div>
+              <svg><use href="#i-cap"/></svg>
+              <div><strong>200+ devs</strong><span>trained in Burmese</span></div>
             </div>
             <div class="stat-chip" data-tilt data-tone="lacquer">
               <svg><use href="#i-spark"/></svg>
-              <div><strong>5 titles</strong><span>published as founder</span></div>
+              <div><strong>10 titles</strong><span>built &amp; published as founder</span></div>
+            </div>
+            <div class="stat-chip" data-tilt data-tone="gold">
+              <svg><use href="#i-people"/></svg>
+              <div><strong>15+ team</strong><span>across GMM &amp; NagaPlus</span></div>
             </div>
           </div>
 
@@ -157,32 +180,40 @@
             <a href="https://docs.google.com/document/d/1ArfCqpVTY3_Ut7gFtc8nCNg62_C0PyHOPu7CErwG0XY/edit?usp=sharing"
               target="_blank" rel="noopener">CV</a>
           </p>
+
+          <p class="creed reveal">
+            <span class="creed-no">No gambling, no dark patterns, no games that ruin lives.</span>
+            <span class="creed-yes">I build to solve real problems and to last - I don't trade my character for money.</span>
+          </p>
         </header>
 
         <section class="home-vision reveal">
           <h2 class="section-label"><svg><use href="#i-flag"/></svg>Why I do this</h2>
           <p class="lede">
-            I taught myself game development with slow internet and no industry around me.
+            I'm a gamer first - I fell in love with games long before I ever made one.
+            Then I taught myself to build them with slow internet and no industry around me.
             It shouldn't have to be that hard. So I see chaos and create structure:
           </p>
           <ul class="dots" style="margin-top:16px">
             <li><em class="gold">Teach</em> - game development in our own language, so the next generation starts years ahead of where I did.</li>
-            <li data-dot="jade"><em class="jade">Publish</em> - Myanmar-made games on world storefronts, with developer-first terms.</li>
-            <li data-dot="lacquer"><em class="lacquer">Prove</em> - project by project, that world-class games can come from anywhere.</li>
+            <li data-dot="jade"><em class="jade">Develop</em> - games that entertain, and games that solve real problems for organizations.</li>
+            <li data-dot="lacquer"><em class="lacquer">Publish</em> - Myanmar-made games on world storefronts, with developer-first terms.</li>
+            <li><em class="gold">Prove</em> - project by project, that world-class games can come from anywhere.</li>
           </ul>
         </section>
 
       </article>
 
       <!-- PLAY -->
-      <article class="tab" data-tab="play">
+      <article class="tab" data-tab="play" id="panel-play" role="tabpanel" aria-labelledby="tab-play" tabindex="-1">
         <h2 class="section-label"><svg><use href="#i-board"/></svg>Play me</h2>
         <p class="lede reveal">Sittuyin - Burmese chess, against me.</p>
         <p class="note reveal" style="margin-top:12px">
-          The chess my country has played for a thousand years, in tea shops and temple
-          courtyards. The board wears our lacquerware colors, and every disc carries the
-          mark of the old royal army - crown, sword, elephant, horse, chariot, shield.
-          I'll explain everything before we start, and yes, I will comment on your moves.
+          The game my country has played for centuries, in tea shops and temple courtyards.
+          The board wears our lacquerware red and black, and every disc is a soldier of the
+          old royal army - King, General, Chariot, Elephant, Horse, and the humble Pawn.
+          I'll teach you the rules before we start, and yes - I'm going to have something to
+          say about every move you make.
         </p>
 
         <div id="sittuyin" class="game-frame reveal">
@@ -203,7 +234,8 @@
 
           <div class="nyan-panel">
             <div class="nyan-head">
-              <img src="./assets/images/my-avatar-human.png" alt="Nyan Kyaw">
+              <img src="./assets/images/profile.png" alt="Nyan Kyaw"
+                onerror="this.onerror=null;this.src='./assets/images/my-avatar-human.png'">
               <div class="who">
                 <strong>Nyan</strong>
                 <span>your opponent</span>
@@ -222,12 +254,34 @@
       </article>
 
       <!-- WORK -->
-      <article class="tab" data-tab="work">
+      <article class="tab" data-tab="work" id="panel-work" role="tabpanel" aria-labelledby="tab-work" tabindex="-1">
         <h2 class="section-label"><svg><use href="#i-pad"/></svg>Selected work</h2>
         <canvas id="pad3d-canvas" aria-hidden="true"></canvas>
 
-        <h3 class="work-sub reveal"><svg><use href="#i-build"/></svg>Built
-          <small>as a developer, in studios and solo</small></h3>
+        <div class="studio-row reveal">
+          <span class="label">Studios I've shipped with</span>
+          <a href="https://megacatstudios.com" target="_blank" rel="noopener" title="Mega Cat Studios">
+            <img src="./assets/images/mega_cat.png" alt="Mega Cat Studios"></a>
+          <img src="./assets/images/Goat-Logo-Chrismas.png" alt="GOAT Studios" title="GOAT Studios">
+          <img src="./assets/images/mawdev.jpg" alt="MawDev GDT" title="MawDev GDT">
+          <a href="https://www.gamemakersmm.com/en" target="_blank" rel="noopener" title="Game Makers Myanmar">
+            <img class="studio-venture" src="./assets/images/gmm-logo.png" alt="Game Makers Myanmar"></a>
+          <a href="https://www.nagaplusinteractive.com" target="_blank" rel="noopener" title="NagaPlus Interactive">
+            <img class="studio-venture" src="./assets/images/nagaplus-logo.png" alt="NagaPlus Interactive"></a>
+          <a class="studio-tile" href="https://greydash.itch.io/" target="_blank" rel="noopener" title="MonoByte Studio - Silent Reverie, Nobody Knows What Happened">
+            <img src="./assets/images/studio-monobyte.png" alt="MonoByte Studio" onload="this.nextElementSibling.hidden=true" onerror="this.remove()"><span>MonoByte Studio</span></a>
+          <a class="studio-tile" href="https://store.steampowered.com/app/2667880/Anominal/" target="_blank" rel="noopener" title="Xlash Games - Anominal">
+            <img src="./assets/images/studio-xlash.png" alt="Xlash Games" onload="this.nextElementSibling.hidden=true" onerror="this.remove()"><span>Xlash Games</span></a>
+          <a class="studio-tile" href="https://store.steampowered.com/app/4213600/Thems_Tale__The_Road_To_Her/" target="_blank" rel="noopener" title="1858 Studio (BarryX) - Them's Tale">
+            <img src="./assets/images/studio-1858.png" alt="1858 Studio" onload="this.nextElementSibling.hidden=true" onerror="this.remove()"><span>1858 Studio</span></a>
+          <a class="studio-tile" href="https://play.google.com/store/apps/details?id=com.FortiCrabGames.WitchingNightsTowerDefense" target="_blank" rel="noopener" title="FortiCrab Games - Witching Nights: Tower Defense">
+            <img src="./assets/images/studio-forticrab.png" alt="FortiCrab Games" onload="this.nextElementSibling.hidden=true" onerror="this.remove()"><span>FortiCrab Games</span></a>
+          <a class="studio-tile" href="https://radicalforge.com" target="_blank" rel="noopener" title="Radical Forge - freelance game projects">
+            <img src="./assets/images/studio-radicalforge.png" alt="Radical Forge" onload="this.nextElementSibling.hidden=true" onerror="this.remove()"><span>Radical Forge</span></a>
+        </div>
+
+        <h3 class="work-sub reveal"><svg><use href="#i-build"/></svg>Built &amp; Published
+          <small>as a developer in studios, and as founder through Game Makers Myanmar</small></h3>
 
         <div class="work-grid">
 
@@ -283,20 +337,6 @@
               </p>
             </div>
           </a>
-
-        </div>
-
-        <div class="studio-row reveal">
-          <span class="label">Studios I've shipped with</span>
-          <img src="./assets/images/mega_cat.png" alt="Mega Cat Studios" title="Mega Cat Studios">
-          <img src="./assets/images/Goat-Logo-Chrismas.png" alt="GOAT Studios" title="GOAT Studios">
-          <img src="./assets/images/mawdev.jpg" alt="MawDev GDT" title="MawDev GDT">
-        </div>
-
-        <h3 class="work-sub reveal"><svg><use href="#i-ship"/></svg>Published
-          <small>as founder, through Game Makers Myanmar</small></h3>
-
-        <div class="work-grid">
 
           <a class="game-card reveal" data-tilt
             href="https://play.google.com/store/apps/details?id=com.FortiCrabGames.WitchingNightsTowerDefense"
@@ -363,11 +403,12 @@
       </article>
 
       <!-- VENTURES -->
-      <article class="tab" data-tab="ventures">
+      <article class="tab" data-tab="ventures" id="panel-ventures" role="tabpanel" aria-labelledby="tab-ventures" tabindex="-1">
         <h2 class="section-label"><svg><use href="#i-flag"/></svg>Ventures</h2>
 
         <div class="venture card reveal" data-tone="gold" data-tilt>
-          <img class="venture-logo" src="./assets/images/gmm-logo.png" alt="Game Makers Myanmar logo">
+          <a class="venture-logo-link" href="https://www.gamemakersmm.com/en" target="_blank" rel="noopener" title="Visit Game Makers Myanmar">
+            <img class="venture-logo" src="./assets/images/gmm-logo.png" alt="Game Makers Myanmar logo"></a>
           <div class="venture-head">
             <h3>Game Makers Myanmar</h3>
             <span class="role">Founder &amp; CEO · Lead Instructor</span>
@@ -382,7 +423,8 @@
         </div>
 
         <div class="venture card reveal" data-tone="jade" data-tilt>
-          <span class="venture-mark" aria-hidden="true">N+</span>
+          <a class="venture-logo-link" href="https://www.nagaplusinteractive.com" target="_blank" rel="noopener" title="Visit NagaPlus Interactive">
+            <img class="venture-logo" src="./assets/images/nagaplus-logo.png" alt="NagaPlus Interactive logo"></a>
           <div class="venture-head">
             <h3>NagaPlus Interactive</h3>
             <span class="role">Founder &amp; CEO</span>
@@ -392,7 +434,7 @@
             <li data-dot="jade">Serious games and gamification, accountable to real business outcomes.</li>
             <li data-dot="jade">Service work funds the original titles we're building for global storefronts.</li>
           </ul>
-          <p class="tagline">Make Interactive Solutions That IMPACT.</p>
+          <p class="tagline">We Make Games That IMPACT.</p>
         </div>
 
         <section style="margin-top:40px">
@@ -400,34 +442,42 @@
           <p class="note reveal">One mission, two companies. Each phase pays for the next.</p>
           <ol class="roadmap">
             <li class="reveal" data-tone="gold">
-              <span class="phase">Educate - now</span>
+              <span class="phase">Teach - now</span>
               <h3>Train the talent the industry doesn't have yet</h3>
               <p>
-                Game development education in Burmese through GMM's academy - 100+ developers
-                so far, with free publishing for students who finish what they start.
-              </p>
-            </li>
-            <li class="reveal" data-tone="gold">
-              <span class="phase">Publish - now</span>
-              <h3>Put Myanmar-made games on world storefronts</h3>
-              <p>
-                Five titles published as founder - from Witching Nights: Tower Defense on
-                Google Play to Anominal and Them's Tale on Steam. Each one is proof that
-                local developers can ship to a global standard.
+                Game development education in Burmese through GMM's academy - 200+ developers
+                and counting, with free publishing for students who finish what they start.
               </p>
             </li>
             <li class="reveal" data-tone="jade">
+              <span class="phase">Develop - now</span>
+              <h3>Build games that entertain, and games that matter</h3>
+              <p>
+                The craft behind both ventures: entertainment titles I ship as a developer,
+                and serious, impactful games that solve real problems for organizations.
+              </p>
+            </li>
+            <li class="reveal" data-tone="lacquer">
+              <span class="phase">Publish - now</span>
+              <h3>Put Myanmar-made games on world storefronts</h3>
+              <p>
+                Titles published as founder - from Witching Nights: Tower Defense on Google
+                Play to Anominal and Them's Tale on Steam. Each one is proof that local
+                developers can ship to a global standard.
+              </p>
+            </li>
+            <li class="reveal" data-tone="gold">
               <span class="phase">Prove - next</span>
               <h3>Make engagement an engineering discipline</h3>
               <p>
-                Through NPI: serious games and gamification that move measurable business
-                KPIs - the service engine that funds original creative work without
+                Through NagaPlus: serious games and gamification that move measurable
+                business KPIs - the engine that funds original creative work without
                 surrendering it.
               </p>
             </li>
             <li class="reveal" data-tone="lacquer">
               <span class="phase">Elevate - beyond</span>
-              <h3>Make Myanmar a serious player in the global game industry</h3>
+              <h3>Make Myanmar a serious player in global games</h3>
               <p>
                 Original titles on global platforms, a publishing bridge international
                 studios trust, and a generation of developers who never had to teach
@@ -439,7 +489,7 @@
       </article>
 
       <!-- FREE STUFF -->
-      <article class="tab" data-tab="free">
+      <article class="tab" data-tab="free" id="panel-free" role="tabpanel" aria-labelledby="tab-free" tabindex="-1">
         <h2 class="section-label"><svg><use href="#i-gift"/></svg>Free stuff</h2>
         <p class="lede reveal">Everything here is free. Take it, learn from it, ship something.</p>
         <p class="note reveal" style="margin-top:12px">
@@ -510,22 +560,44 @@
             Either way, it starts with a hello.
           </p>
           <div class="cta-row">
-            <a class="btn btn-gold" href="https://www.gamemakersmm.com/en" target="_blank" rel="noopener">
-              <svg><use href="#i-cap"/></svg>Join GMM Academy</a>
-            <a class="btn btn-jade" href="mailto:nyankyaw.gamedev@gmail.com?subject=NagaPlus%20project">
+            <a class="btn btn-gold" href="https://discord.gg/e5EDhsTgCX" target="_blank" rel="noopener">
+              <svg><use href="#i-people"/></svg>Join GMM Community</a>
+            <a class="btn btn-jade" href="https://www.nagaplusinteractive.com" target="_blank" rel="noopener">
               <svg><use href="#i-spark"/></svg>Work with NagaPlus</a>
           </div>
         </div>
       </article>
 
       <!-- CONTACT -->
-      <article class="tab" data-tab="contact">
+      <article class="tab" data-tab="contact" id="panel-contact" role="tabpanel" aria-labelledby="tab-contact" tabindex="-1">
         <h2 class="section-label"><svg><use href="#i-mail"/></svg>Contact</h2>
         <p class="lede reveal">Working on something that needs structure? Tell me about it.</p>
-        <div class="contact-row reveal">
-          <a href="mailto:nyankyaw.gamedev@gmail.com">nyankyaw.gamedev@gmail.com</a>
-          <a href="tel:+66930639070">+66 93 063 9070</a>
-          <a href="https://www.linkedin.com/in/nyannevillekyaw001/" target="_blank" rel="noopener">LinkedIn</a>
+        <div class="contact-methods reveal">
+          <a class="contact-card" data-tone="gold" href="mailto:nyankyaw.gamedev@gmail.com">
+            <svg><use href="#i-mail"/></svg>
+            <div><strong>Email</strong><span>nyankyaw.gamedev@gmail.com</span></div>
+          </a>
+          <a class="contact-card" data-tone="jade" href="https://www.linkedin.com/in/nyannevillekyaw001/" target="_blank" rel="noopener">
+            <svg><use href="#i-link"/></svg>
+            <div><strong>LinkedIn</strong><span>let's connect</span></div>
+          </a>
+          <a class="contact-card" data-tone="lacquer" href="https://www.youtube.com/@neville-gamedev" target="_blank" rel="noopener">
+            <svg><use href="#i-play"/></svg>
+            <div><strong>YouTube</strong><span>devlogs &amp; experiments</span></div>
+          </a>
+          <a class="contact-card" data-tone="gold" href="https://discord.gg/e5EDhsTgCX" target="_blank" rel="noopener">
+            <svg><use href="#i-chat"/></svg>
+            <div><strong>Discord</strong><span>the GMM community</span></div>
+          </a>
+        </div>
+
+        <p class="contact-prompt reveal">Not sure where to start? Tap one and I'll start your message:</p>
+        <div class="topic-chips reveal">
+          <button type="button" class="topic-chip" data-tone="gold" data-topic="I'd like to publish my game with Game Makers Myanmar. Here's what I'm working on: ">Publish my game</button>
+          <button type="button" class="topic-chip" data-tone="jade" data-topic="I have a project for NagaPlus - serious games or gamification. Here's the brief: ">Hire NagaPlus</button>
+          <button type="button" class="topic-chip" data-tone="lacquer" data-topic="I want to learn game development with GMM. A little about me: ">Learn at GMM</button>
+          <button type="button" class="topic-chip" data-tone="jade" data-topic="I'd love to join the team / work at your studios. Here's my background and what I build: ">Join the team</button>
+          <button type="button" class="topic-chip" data-tone="gold" data-topic="Just saying hi - ">Just say hi</button>
         </div>
 
         <form class="contact-form reveal" action="https://formspree.io/f/xrbzzpod" method="post">
@@ -543,17 +615,18 @@
 
     <footer>
       <span>© 2026 Nyan Kyaw · Bangkok</span>
-      <span>Designed and built by hand, with tea.</span>
+      <span class="footer-ds">Runs on my own design system you can steal -
+        <a href="./assets/art/DESIGN-SYSTEM.md" download="nyankyaw-design-system.md">download the recipe</a></span>
     </footer>
 
   </div>
 
-  <script src="./assets/js/quiet-field-3d.js?v=4"></script>
-  <script src="./assets/js/tabs.js?v=4"></script>
-  <script src="./assets/js/interactions.js?v=4"></script>
-  <script src="./assets/js/cursor.js?v=4"></script>
-  <script src="./assets/js/sittuyin.js?v=4"></script>
-  <script type="module" src="./assets/js/hero3d.js?v=4"></script>
+  <script src="./assets/js/quiet-field-3d.js?v=8"></script>
+  <script src="./assets/js/tabs.js?v=8"></script>
+  <script src="./assets/js/interactions.js?v=8"></script>
+  <script src="./assets/js/cursor.js?v=8"></script>
+  <script src="./assets/js/sittuyin.js?v=8"></script>
+  <script type="module" src="./assets/js/hero3d.js?v=8"></script>
 
 </body>
 

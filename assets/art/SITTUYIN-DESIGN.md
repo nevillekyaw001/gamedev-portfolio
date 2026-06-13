@@ -34,5 +34,18 @@ gently toward GMM/contact.
 
 **Game feel (Swink):** eased piece slides (220ms), capture scale-fade, last-move and check
 highlights, legal-move dots, promotion pulse, speech-bubble pop, soft sine-wave audio ticks
-(move/capture/check) behind a mute toggle, AI "thinking" delay of 350–1000ms so the opponent
+(move/capture/check) behind a mute toggle, AI "thinking" delay of 350-1000ms so the opponent
 appears to consider rather than compute.
+
+**Iconography (June 2026):** the six discs use clean gold silhouettes that read at ~26px -
+crown (King), upright sword (General), spoked cart wheel (Chariot, deliberately distinct
+from a clock), front-facing elephant with ears + hanging trunk (Elephant), chess-knight head
+(Horse), classic pawn (Pawn). Hover shows the name English-first with the Burmese term, e.g.
+"King · Min-gyi". The two sit-ke-myin diagonals are drawn per-square: main-diagonal cells get
+a 45deg gradient, anti-diagonal cells a 135deg gradient, so each great line stays continuous
+corner-to-corner (the earlier single-angle version only aligned one of the two).
+
+**Commentary tone (June 2026 rewrite):** lighter, funnier, more relatable - dropped the
+"smart guy" register for playful jabs ("Oh no. Oh nooo. You didn't."), more lines per pool so
+they rarely repeat, roasts still aimed at the move never the player, wins still funnel gently
+to GMM/contact.

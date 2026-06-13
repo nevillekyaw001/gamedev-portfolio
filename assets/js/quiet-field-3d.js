@@ -11,7 +11,7 @@
 
   var PARAMS = {
     seed: 19960921,
-    count: 240,            // particles in the volume
+    count: 340,            // particles in the volume - denser, more alive
     depth: 900,            // z-extent of the volume
     fov: 420,              // perspective strength
     driftSpeed: 0.5,
@@ -19,15 +19,16 @@
     noiseScale: 0.0013,
     fieldTurn: 2.5,
     timeScale: 0.00005,
-    parallax: 38,          // max camera lean toward cursor (px)
+    parallax: 42,          // max camera lean toward cursor (px)
     scrollDrift: 0.12,     // camera z-response to scroll
-    convergence: 0.70,     // accents surface a little more often now
-    firefly: 0.855         // above this, a convergence glows
+    convergence: 0.60,     // accents surface more often
+    firefly: 0.80,         // above this, a convergence glows
+    motes: 30              // ambient twinkling sparkles drifting in front
   };
 
-  var BG = [19, 18, 16];
-  var INK = [70, 67, 60];
-  var ACCENTS = [[227, 179, 76], [108, 198, 161], [212, 96, 79]];  // gold, jade, lacquer
+  var BG = [18, 17, 16];
+  var INK = [76, 72, 64];
+  var ACCENTS = [[244, 186, 56], [79, 214, 163], [242, 101, 77]];  // gold, jade, lacquer (vibrant)
 
   var canvas = document.getElementById('field-canvas');
   if (!canvas) return;
@@ -65,6 +66,7 @@
   var rand = mulberry32(PARAMS.seed ^ 0x9E3779B9);
   var W = 0, H = 0, dpr = 1;
   var particles = [];
+  var motes = [];
   var camX = 0, camY = 0, targetX = 0, targetY = 0, scrollZ = 0, targetScrollZ = 0;
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -77,6 +79,19 @@
       px: null, py: null,                  // previous projected point
       life: 300 + rand() * 700,
       accent: ACCENTS[(rand() * ACCENTS.length) | 0]
+    };
+  }
+
+  function spawnMote() {
+    return {
+      x: rand() * (W || window.innerWidth),
+      y: rand() * (H || window.innerHeight),
+      r: 0.6 + rand() * 1.7,
+      tw: rand() * 6.2832,
+      tws: 0.008 + rand() * 0.022,
+      vx: (rand() - 0.5) * 0.18,
+      vy: -0.05 - rand() * 0.13,            // drift gently upward
+      col: ACCENTS[(rand() * ACCENTS.length) | 0]
     };
   }
 
@@ -124,20 +139,25 @@
       var q = project(p);
       if (p.px !== null && Math.abs(q.x - p.px) < 40 && Math.abs(q.y - p.py) < 40) {
         var near = 1 - q.z / PARAMS.depth;            // 0 far → 1 near
-        var alpha = 0.08 + near * 0.22;
+        var alpha = 0.09 + near * 0.26;
         var col = n > PARAMS.convergence ? p.accent : INK;
         ctx.strokeStyle = 'rgba(' + col[0] + ',' + col[1] + ',' + col[2] + ',' + alpha.toFixed(3) + ')';
-        ctx.lineWidth = 0.5 + q.s * 1.1;
+        ctx.lineWidth = 0.5 + q.s * 1.2;
         ctx.beginPath();
         ctx.moveTo(p.px, p.py);
         ctx.lineTo(q.x, q.y);
         ctx.stroke();
         if (n > PARAMS.firefly) {
-          // a firefly: brief soft glow where the field is tightest
-          ctx.fillStyle = 'rgba(' + col[0] + ',' + col[1] + ',' + col[2] + ',' +
-            (0.10 + near * 0.18).toFixed(3) + ')';
+          // a firefly: a soft glow where the field is tightest. Brighter
+          // core + a faint halo, so convergences read as little embers.
+          var fa = 0.14 + near * 0.28;
+          var fr = 1.4 + q.s * 2.4;
+          var g = ctx.createRadialGradient(q.x, q.y, 0, q.x, q.y, fr * 2.4);
+          g.addColorStop(0, 'rgba(' + col[0] + ',' + col[1] + ',' + col[2] + ',' + fa.toFixed(3) + ')');
+          g.addColorStop(1, 'rgba(' + col[0] + ',' + col[1] + ',' + col[2] + ',0)');
+          ctx.fillStyle = g;
           ctx.beginPath();
-          ctx.arc(q.x, q.y, 1.1 + q.s * 1.6, 0, 6.2832);
+          ctx.arc(q.x, q.y, fr * 2.4, 0, 6.2832);
           ctx.fill();
         }
       }
@@ -146,6 +166,28 @@
       if (--p.life <= 0 || Math.abs(p.x) > 1.5 || Math.abs(p.y) > 1.5) {
         particles[i] = spawn();
       }
+    }
+
+    // ambient motes: slow twinkling sparkles drifting in front of the field
+    for (var mi = 0; mi < motes.length; mi++) {
+      var mo = motes[mi];
+      mo.x += mo.vx; mo.y += mo.vy; mo.tw += mo.tws;
+      if (mo.y < -12 || mo.x < -12 || mo.x > W + 12) {
+        motes[mi] = spawnMote(); motes[mi].y = H + 8; continue;
+      }
+      var tw = 0.5 + 0.5 * Math.sin(mo.tw);             // 0..1 twinkle
+      var ma = 0.04 + tw * 0.24;
+      var mg = ctx.createRadialGradient(mo.x, mo.y, 0, mo.x, mo.y, mo.r * 4.2);
+      mg.addColorStop(0, 'rgba(' + mo.col[0] + ',' + mo.col[1] + ',' + mo.col[2] + ',' + ma.toFixed(3) + ')');
+      mg.addColorStop(1, 'rgba(' + mo.col[0] + ',' + mo.col[1] + ',' + mo.col[2] + ',0)');
+      ctx.fillStyle = mg;
+      ctx.beginPath();
+      ctx.arc(mo.x, mo.y, mo.r * 4.2, 0, 6.2832);
+      ctx.fill();
+      ctx.fillStyle = 'rgba(' + mo.col[0] + ',' + mo.col[1] + ',' + mo.col[2] + ',' + (ma * 1.5).toFixed(3) + ')';
+      ctx.beginPath();
+      ctx.arc(mo.x, mo.y, mo.r, 0, 6.2832);
+      ctx.fill();
     }
   }
 
@@ -167,6 +209,7 @@
 
   resize();
   for (var i = 0; i < PARAMS.count; i++) particles.push(spawn());
+  for (var mm = 0; mm < PARAMS.motes; mm++) motes.push(spawnMote());
 
   if (reduced) {
     for (var s = 0; s < 500; s++) step(s * 16);

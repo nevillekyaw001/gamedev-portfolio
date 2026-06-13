@@ -18,16 +18,16 @@
   var thinking = false;
 
   var VAL = { P: 100, F: 220, S: 260, N: 380, R: 550, K: 20000 };
-  // Royal army iconography of the old Burmese kingdoms - each piece is
-  // its soldier: the hti spire for the king, the dha sword for the
-  // general, war elephant, cavalry, chariot wheel, infantry shield.
+  // Royal army iconography of the old Burmese kingdoms. Each disc is one
+  // soldier: crown (king), sword (general), war elephant, cavalry horse,
+  // chariot wheel, and the foot soldier (pawn).
   var GLYPH = {
     K: '#p-king', F: '#p-general', S: '#p-elephant',
     N: '#p-horse', R: '#p-chariot', P: '#p-pawn'
   };
   var NAME = {
-    K: 'Min-gyi (King)', F: 'Sit-ke (General)', S: 'Sin (Elephant)',
-    N: 'Myin (Horse)', R: 'Yahhta (Chariot)', P: 'Nè (Feudal lord)'
+    K: 'King · Min-gyi', F: 'General · Sit-ke', S: 'Elephant · Sin',
+    N: 'Horse · Myin', R: 'Chariot · Yahhta', P: 'Pawn · Nè'
   };
 
   function initialBoard() {
@@ -208,64 +208,77 @@
   // ----------------------------------------------------------- personality
   var LINES = {
     intro: [
-      "Sittuyin - the chess my grandparents' generation played in tea shops. You're Red, you move first. Show me something.",
-      "Welcome to my board. Burmese rules, no castling, no shortcuts. Red moves first - that's you."
+      "Alright, tea's poured. You're Red, you go first. Let's see what you've got.",
+      "Burmese chess, my house, my rules. You move first though - I'm not a monster.",
+      "Welcome to the board. Be brave, be reckless, just don't be boring.",
+      "You sit, I'll talk. That's usually how this goes. Your move."
     ],
     playerGoodCapture: [
-      "Okay, that was clean. I teach this for a living and I'd still mark that correct.",
-      "Nice take. You've done this before, haven't you?",
-      "That's a real move. Respect.",
-      "Sharp. The tea shop crowd would've nodded at that one."
+      "Oof. Okay, that actually hurt a little.",
+      "Clean. Did you just hustle me on my own website?",
+      "Respect. That's the move I'd have played.",
+      "Now we're playing. I'm awake now.",
+      "Stop that. That was good and I don't like it."
     ],
     playerSmallCapture: [
-      "A pawn is a pawn. I've shipped games on smaller wins.",
-      "Fair trade. Let's see what you do with it.",
-      "You found the free snack. The meal is better defended."
+      "A pawn? Sure, take the snack. The kitchen's still mine.",
+      "Cute little capture. Adorable, even.",
+      "You got one. Want a sticker?",
+      "Fine, fair trade. I wasn't using that one anyway."
     ],
     playerBlunder: [
-      "Bold. Wrong, but bold.",
-      "I've seen my students do that. On day one.",
-      "That piece was load-bearing, you know.",
-      "You sure about that? ...Too late, I'm taking it.",
-      "I'm going to be polite and call that 'experimental'."
+      "Oh no. Oh nooo. You didn't.",
+      "That piece was holding the whole house up, by the way.",
+      "I'm taking that, and I'm taking it personally.",
+      "Bold strategy. Let's see how it plays out... it played out badly.",
+      "My students do that. Then they don't do it again.",
+      "You really just left that there for me? Thank you, truly."
     ],
     aiCapture: [
-      "Mine now. Structure beats chaos - I keep telling people.",
-      "Thank you for the donation. It funds the academy.",
-      "I'll look after this piece better than you did.",
-      "Every system has a weak point. That was yours."
+      "Mine now. I'll give it a good home.",
+      "Snap. Order beats chaos, every single time.",
+      "Thanks for that - goes straight to the trophy shelf.",
+      "I saw that three moves ago, friend.",
+      "Gone. Don't look so surprised."
     ],
     aiCheck: [
-      "Check. Your king should start networking for a new job.",
-      "Check. No castling in Sittuyin - your king has to face this like an adult.",
-      "Check. Breathe. There's usually a way out. Usually."
+      "Check. Your king's looking a little nervous.",
+      "Check! No castling here - he has to sweat this one out.",
+      "Check. I'd run if I were him. Actually, you can't run far.",
+      "Knock knock. It's check."
     ],
     playerCheck: [
-      "Check?! Okay, okay. I respect the aggression.",
-      "Careful - I get focused when I'm cornered.",
-      "A check on my own board. The audacity. I love it."
+      "Check?! On me? The disrespect. I love it.",
+      "Okay okay, I see you. Settle down.",
+      "Cornering me already? Bold. I get scary when cornered.",
+      "A check on my own board. Screenshot that, it won't last."
     ],
     thinking: [
-      "Hmm...", "Let me think...", "Interesting...", "One second..."
+      "Hmm.", "Let me cook.", "Interesting...", "One sec.", "Plotting.", "Ooh."
     ],
     aiWin: [
-      "Checkmate. Good game - seriously. Now imagine what you'd build after a few classes at GMM.",
-      "Checkmate. You lasted longer than most of my Discord. Rematch?"
+      "Checkmate. GG though - you've got instincts. Imagine those with actual training.",
+      "Checkmate! Good game. Seriously, come find me, I teach this stuff.",
+      "And that's the game. You lasted longer than most. Rematch?"
     ],
     playerWin: [
-      "Checkmate... to me. On my own portfolio. I'm impressed and slightly hurt - email me, we should work together.",
-      "You beat me. I'm putting this loss in my retrospective. Well played."
+      "...Checkmate. On me. Okay, you win - now email me, clearly we should talk.",
+      "You actually beat me. I'm impressed and a little betrayed. Well played.",
+      "GG. I'm filing this under 'learning experience'. Rematch when my ego heals?"
     ],
     draw: [
-      "Stalemate - in real Sittuyin you're not even allowed to do that to me, so let's call it a draw and remain friends."
+      "A draw. Honourable. We shake hands and pretend we both had it.",
+      "Stalemate - technically illegal in real Sittuyin, so let's just stay friends."
     ],
     promote: [
-      "My pawn just got promoted to general. Hard work pays off - I built two companies on that principle.",
-      "Promotion on the gold line. In Burmese we'd say the feudal lord earned his stripes."
+      "And my little pawn becomes a general. They grow up so fast.",
+      "Promotion! See, hard work on the gold line pays off.",
+      "Field promotion. He's earned it."
     ],
     playerPromote: [
-      "You found the promotion rule. Now you're playing real Sittuyin.",
-      "Promoted. See, the gold diagonals aren't just decoration."
+      "You found the promotion rule. Now you're dangerous.",
+      "Promoted on the gold line - told you those weren't just decoration.",
+      "Look at you, growing a general. Respect."
     ]
   };
 
@@ -310,13 +323,28 @@
       for (var f = 0; f < 8; f++) {
         var i = r * 8 + f;
         var sq = document.createElement('div');
-        sq.className = 'sq ' + (((r + f) % 2) ? 'sq-light' : 'sq-dark') + (onX(i) ? ' sq-x' : '');
+        sq.className = 'sq ' + (((r + f) % 2) ? 'sq-light' : 'sq-dark');
         sq.dataset.i = i;
         sq.addEventListener('click', onSquareClick);
         boardEl.appendChild(sq);
         squares[i] = sq;
       }
     }
+    // sit-ke-myin: the two great diagonals, drawn as one crisp full-board
+    // overlay so each spans corner to corner (above squares, below pieces).
+    var ns = 'http://www.w3.org/2000/svg';
+    var lines = document.createElementNS(ns, 'svg');
+    lines.setAttribute('class', 'board-lines');
+    lines.setAttribute('viewBox', '0 0 8 8');
+    lines.setAttribute('preserveAspectRatio', 'none');
+    lines.setAttribute('aria-hidden', 'true');
+    [['0', '0', '8', '8'], ['8', '0', '0', '8']].forEach(function (c) {
+      var ln = document.createElementNS(ns, 'line');
+      ln.setAttribute('x1', c[0]); ln.setAttribute('y1', c[1]);
+      ln.setAttribute('x2', c[2]); ln.setAttribute('y2', c[3]);
+      lines.appendChild(ln);
+    });
+    boardEl.appendChild(lines);
   }
 
   function pieceNode(pc, i) {
@@ -504,7 +532,7 @@
     },
     {
       title: 'The royal army',
-      body: "The spire crown is Min-gyi, the king: one step, any direction. The dha sword is Sit-ke, the general: one step, diagonal only. The elephant is Sin: one step diagonal, or one straight forward. The horse is Myin: exactly like a chess knight. The wheel is Yahhta, the chariot: exactly like a rook. The shield is Nè, the foot soldier: one step forward, captures diagonally, no double first step. Hover any disc and I'll remind you who it is."
+      body: "Six ranks, six jobs. The crown is the King (Min-gyi): one step, any direction. The sword is the General (Sit-ke): one step, diagonal only. The Elephant (Sin): one step diagonal, or one straight forward. The Horse (Myin): exactly a chess knight. The Chariot wheel (Yahhta): exactly a rook. And the Pawn (Nè), your foot soldier: one step forward, captures on the diagonal, no double-step. Hover any disc and I'll tell you who it is."
     },
     {
       title: 'The gold lines',
